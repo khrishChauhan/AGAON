@@ -25,8 +25,7 @@ export default function Header() {
     { label: 'About', path: '/about' },
     { label: 'Services', path: '/services' },
     { label: 'Portfolio', path: '/portfolio' },
-    { label: 'Estimator', path: '/estimator' },
-    { label: 'Contact', path: '/contact' }
+    { label: 'Estimator', path: '/estimator' }
   ];
 
   const handleNavigate = (path: string) => {
