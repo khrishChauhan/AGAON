@@ -6,7 +6,13 @@ export interface Project {
   longDescription: string;
   image: string;
   location: string;
-  size: string; // e.g."1,200,000 Sq. Ft."value: string; // e.g."₹740 Cr"or"₹1,200 Cr"client: string; completionYear: string; safetyRating: string; // e.g."Zero-incident Gold Star"engineeringHighlights: string[]; specs: { label: string; value: string}[];
+  size: string; // e.g. "1,200,000 Sq. Ft."
+  value: string; // e.g. "₹740 Cr" or "₹1,200 Cr"
+  client: string;
+  completionYear: string;
+  safetyRating: string; // e.g. "Zero-incident Gold Star"
+  engineeringHighlights: string[];
+  specs: { label: string; value: string }[];
 }
 export interface TechMethodology {
   id: string;

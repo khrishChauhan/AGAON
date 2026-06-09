@@ -11,7 +11,11 @@ import {
 import { motion } from "motion/react"; // Configuration profiles for calculation sectors
 interface SectorConfig {
   name: string;
-  baseCostPerSqFt: number; // in INR baseConcreteMultiplier: number; // cubic meters per sq ft baseSteelMultiplier: number; // metric tons per 10k sq ft carbonReductionFactor: number; // percentage baseTimelineMonths: number;
+  baseCostPerSqFt: number; // in INR
+  baseConcreteMultiplier: number; // cubic meters per sq ft
+  baseSteelMultiplier: number; // metric tons per 10k sq ft
+  carbonReductionFactor: number; // percentage
+  baseTimelineMonths: number;
 }
 const SECTORS: Record<string, SectorConfig> = {
   office: {
