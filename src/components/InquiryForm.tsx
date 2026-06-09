@@ -106,7 +106,7 @@ export default function InquiryForm({ initialSector = 'Commercial' }: InquiryFor
   };
 
   return (
-    <section id="inquiry-terminal" className="py-24 bg-[#07152E] text-white overflow-hidden relative">
+    <section id="inquiry-terminal" className="py-24 bg-[#111844] text-white overflow-hidden relative">
       {/* Structural backgrounds */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#0D2248]/40 rounded-full blur-[180px] pointer-events-none" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:35px_35px]" />
@@ -115,8 +115,8 @@ export default function InquiryForm({ initialSector = 'Commercial' }: InquiryFor
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 text-[#FF6B2C] font-mono text-xs tracking-[0.25em] uppercase mb-4 font-semibold">
-            <Compass className="w-4 h-4 text-[#FF6B2C] animate-spin-slow" />
+          <div className="inline-flex items-center space-x-2 text-[#4B5694] font-mono text-xs tracking-[0.25em] uppercase mb-4 font-semibold">
+            <Compass className="w-4 h-4 text-[#4B5694] animate-spin-slow" />
             <span>Request for Proposal Portal</span>
           </div>
           <h2 className="font-sans text-3xl md:text-5xl font-bold tracking-tight text-white">
@@ -141,11 +141,11 @@ export default function InquiryForm({ initialSector = 'Commercial' }: InquiryFor
                 className="min-h-[350px] flex flex-col items-center justify-center space-y-6 text-center"
               >
                 <div className="relative">
-                  <div className="w-16 h-16 rounded-full border-4 border-[#0D2248] border-t-[#FF6B2C] animate-spin" />
-                  <HardHat className="w-7 h-7 text-[#FF6B2C] absolute inset-y-0 inset-x-0 mx-auto my-auto animate-pulse" />
+                  <div className="w-16 h-16 rounded-full border-4 border-[#0D2248] border-t-[#4B5694] animate-spin" />
+                  <HardHat className="w-7 h-7 text-[#4B5694] absolute inset-y-0 inset-x-0 mx-auto my-auto animate-pulse" />
                 </div>
                 <div className="space-y-2">
-                  <span className="block font-mono text-xs text-[#FF6B2C] uppercase tracking-widest">
+                  <span className="block font-mono text-xs text-[#4B5694] uppercase tracking-widest">
                     AGAON Structural Engine Processing
                   </span>
                   <p className="font-sans font-semibold text-lg text-white">
@@ -180,7 +180,7 @@ export default function InquiryForm({ initialSector = 'Commercial' }: InquiryFor
                 </div>
 
                 {/* Simulated Certificate Block */}
-                <div className="bg-[#07152E] border border-emerald-500/20 rounded-2xl p-6 md:p-8 space-y-6 max-w-xl mx-auto font-mono text-xs">
+                <div className="bg-[#111844] border border-emerald-500/20 rounded-2xl p-6 md:p-8 space-y-6 max-w-xl mx-auto font-mono text-xs">
                   <div className="flex justify-between items-start border-b border-[#0D2248] pb-4">
                     <div>
                       <span className="block text-[10px] text-slate-500 uppercase">Document Class</span>
@@ -201,7 +201,7 @@ export default function InquiryForm({ initialSector = 'Commercial' }: InquiryFor
                     </div>
                     <div>
                       <span className="block text-slate-500">SECURE TOKEN REDIRECT:</span>
-                      <span className="text-[#FF6B2C] font-bold block truncate">{rfpId}</span>
+                      <span className="text-[#4B5694] font-bold block truncate">{rfpId}</span>
                     </div>
                     <div>
                       <span className="block text-slate-500">PROPOSED SCALE:</span>
@@ -243,15 +243,15 @@ export default function InquiryForm({ initialSector = 'Commercial' }: InquiryFor
                     <div key={s} className="flex items-center space-x-3">
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center font-mono text-xs font-bold transition-colors ${
                         step === s
-                          ? 'bg-[#FF6B2C] text-white shadow-md'
+                          ? 'bg-[#4B5694] text-white shadow-md'
                           : step > s
                           ? 'bg-emerald-500 text-white'
-                          : 'bg-[#07152E] text-slate-500 border border-[#0D2248]'
+                          : 'bg-[#111844] text-slate-500 border border-[#0D2248]'
                       }`}>
                         {step > s ? '✓' : s}
                       </div>
                       <span className={`hidden sm:inline font-sans text-xs font-bold uppercase tracking-wider ${
-                        step === s ? 'text-[#FF6B2C]' : 'text-slate-400'
+                        step === s ? 'text-[#4B5694]' : 'text-slate-400'
                       }`}>
                         {s === 1 && 'Structural Focus'}
                         {s === 2 && 'Identity Logs'}
@@ -277,7 +277,7 @@ export default function InquiryForm({ initialSector = 'Commercial' }: InquiryFor
                         <select
                           value={formData.sector}
                           onChange={(e) => setFormData({ ...formData, sector: e.target.value })}
-                          className="w-full bg-[#07152E] border border-[#0D2248] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#FF6B2C] transition-colors"
+                          className="w-full bg-[#111844] border border-[#0D2248] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#4B5694] transition-colors"
                         >
                           <option value="Commercial">High-Rise Commercial</option>
                           <option value="Residential">Bespoke Premium Residential</option>
@@ -293,7 +293,7 @@ export default function InquiryForm({ initialSector = 'Commercial' }: InquiryFor
                         <select
                           value={formData.investmentScale}
                           onChange={(e) => setFormData({ ...formData, investmentScale: e.target.value })}
-                          className="w-full bg-[#07152E] border border-[#0D2248] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#FF6B2C] transition-colors"
+                          className="w-full bg-[#111844] border border-[#0D2248] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#4B5694] transition-colors"
                         >
                           <option value="₹50 Cr - ₹100 Cr">₹50 Cr - ₹100 Cr</option>
                           <option value="₹100 Cr - ₹500 Cr">₹100 Cr - ₹500 Cr</option>
@@ -304,7 +304,7 @@ export default function InquiryForm({ initialSector = 'Commercial' }: InquiryFor
                     </div>
 
                     <div className="p-4 bg-white/5 border border-white/5 rounded-2xl flex items-start space-x-3">
-                      <Landmark className="w-5 h-5 text-[#FF6B2C] shrink-0 mt-0.5" />
+                      <Landmark className="w-5 h-5 text-[#4B5694] shrink-0 mt-0.5" />
                       <div>
                         <span className="block text-xs font-sans font-bold text-white mb-0.5">Note on scale margins:</span>
                         <p className="text-slate-400 text-[11px] leading-relaxed">
@@ -333,7 +333,7 @@ export default function InquiryForm({ initialSector = 'Commercial' }: InquiryFor
                           placeholder="e.g. Vikramaditya Chawla"
                           value={formData.clientName}
                           onChange={(e) => setFormData({ ...formData, clientName: e.target.value })}
-                          className="w-full bg-[#07152E] border border-[#0D2248] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#FF6B2C] transition-colors placeholder:text-slate-650"
+                          className="w-full bg-[#111844] border border-[#0D2248] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#4B5694] transition-colors placeholder:text-slate-650"
                         />
                         {formErrors.clientName && (
                           <span className="block text-[10px] text-red-400 font-mono">{formErrors.clientName}</span>
@@ -350,7 +350,7 @@ export default function InquiryForm({ initialSector = 'Commercial' }: InquiryFor
                           placeholder="e.g. Crest Development Group"
                           value={formData.organization}
                           onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-                          className="w-full bg-[#07152E] border border-[#0D2248] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#FF6B2C] transition-colors placeholder:text-slate-650"
+                          className="w-full bg-[#111844] border border-[#0D2248] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#4B5694] transition-colors placeholder:text-slate-650"
                         />
                         {formErrors.organization && (
                           <span className="block text-[10px] text-red-400 font-mono">{formErrors.organization}</span>
@@ -367,7 +367,7 @@ export default function InquiryForm({ initialSector = 'Commercial' }: InquiryFor
                           placeholder="v.chawla@crestgroup.com"
                           value={formData.corporateEmail}
                           onChange={(e) => setFormData({ ...formData, corporateEmail: e.target.value })}
-                          className="w-full bg-[#07152E] border border-[#0D2248] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#FF6B2C] transition-colors placeholder:text-slate-650"
+                          className="w-full bg-[#111844] border border-[#0D2248] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#4B5694] transition-colors placeholder:text-slate-650"
                         />
                         {formErrors.corporateEmail && (
                           <span className="block text-[10px] text-red-400 font-mono">{formErrors.corporateEmail}</span>
@@ -384,7 +384,7 @@ export default function InquiryForm({ initialSector = 'Commercial' }: InquiryFor
                           placeholder="+91 98XXX XXXXX"
                           value={formData.corporatePhone}
                           onChange={(e) => setFormData({ ...formData, corporatePhone: e.target.value })}
-                          className="w-full bg-[#07152E] border border-[#0D2248] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#FF6B2C] transition-colors placeholder:text-slate-650"
+                          className="w-full bg-[#111844] border border-[#0D2248] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#4B5694] transition-colors placeholder:text-slate-650"
                         />
                         {formErrors.corporatePhone && (
                           <span className="block text-[10px] text-red-400 font-mono">{formErrors.corporatePhone}</span>
@@ -412,7 +412,7 @@ export default function InquiryForm({ initialSector = 'Commercial' }: InquiryFor
                           placeholder="e.g. Sector-65 High Street Corridor, Gurgaon"
                           value={formData.siteLocation}
                           onChange={(e) => setFormData({ ...formData, siteLocation: e.target.value })}
-                          className="w-full bg-[#07152E] border border-[#0D2248] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#FF6B2C] transition-colors placeholder:text-slate-650"
+                          className="w-full bg-[#111844] border border-[#0D2248] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#4B5694] transition-colors placeholder:text-slate-650"
                         />
                         {formErrors.siteLocation && (
                           <span className="block text-[10px] text-red-400 font-mono">{formErrors.siteLocation}</span>
@@ -426,7 +426,7 @@ export default function InquiryForm({ initialSector = 'Commercial' }: InquiryFor
                         <select
                           value={formData.siteReadyState}
                           onChange={(e) => setFormData({ ...formData, siteReadyState: e.target.value })}
-                          className="w-full bg-[#07152E] border border-[#0D2248] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#FF6B2C] transition-colors font-sans"
+                          className="w-full bg-[#111844] border border-[#0D2248] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#4B5694] transition-colors font-sans"
                         >
                           <option value="Approved for Excavation">Approved & Cleared for Excavation</option>
                           <option value="Acquisition Phase">Under Acquisition Phase</option>
@@ -444,7 +444,7 @@ export default function InquiryForm({ initialSector = 'Commercial' }: InquiryFor
                         placeholder="Define custom clear spans, high-humidity requirements, or tuned mass damper benchmarks..."
                         value={formData.specialRequirements}
                         onChange={(e) => setFormData({ ...formData, specialRequirements: e.target.value })}
-                        className="w-full bg-[#07152E] border border-[#0D2248] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#FF6B2C] transition-colors placeholder:text-slate-650 resize-none font-sans"
+                        className="w-full bg-[#111844] border border-[#0D2248] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#4B5694] transition-colors placeholder:text-slate-650 resize-none font-sans"
                       />
                     </div>
                   </motion.div>
@@ -456,7 +456,7 @@ export default function InquiryForm({ initialSector = 'Commercial' }: InquiryFor
                     <button
                       type="button"
                       onClick={handleBack}
-                      className="px-6 py-3 bg-[#07152E] hover:bg-[#122c5c] text-white font-sans text-xs uppercase tracking-wider font-bold rounded-lg transition-colors cursor-pointer"
+                      className="px-6 py-3 bg-[#111844] hover:bg-[#122c5c] text-white font-sans text-xs uppercase tracking-wider font-bold rounded-lg transition-colors cursor-pointer"
                     >
                       Step Backward
                     </button>
@@ -468,7 +468,7 @@ export default function InquiryForm({ initialSector = 'Commercial' }: InquiryFor
                     <button
                       type="button"
                       onClick={handleNext}
-                      className="px-6 py-3 bg-[#FF6B2C] hover:bg-[#ff7b42] text-white font-sans text-xs uppercase tracking-wider font-bold rounded-lg transition-colors cursor-pointer flex items-center"
+                      className="px-6 py-3 bg-[#4B5694] hover:bg-[#7288AE] text-white font-sans text-xs uppercase tracking-wider font-bold rounded-lg transition-colors cursor-pointer flex items-center"
                     >
                       <span>Proceed Forward</span>
                       <Send className="w-3.5 h-3.5 ml-2" />
@@ -476,7 +476,7 @@ export default function InquiryForm({ initialSector = 'Commercial' }: InquiryFor
                   ) : (
                     <button
                       type="submit"
-                      className="px-8 py-3 bg-[#FF6B2C] hover:bg-[#ff7b42] text-white font-sans text-xs uppercase tracking-wider font-bold rounded-lg transition-colors cursor-pointer flex items-center shadow-[0_4px_14px_rgba(255,107,44,0.3)]"
+                      className="px-8 py-3 bg-[#4B5694] hover:bg-[#7288AE] text-white font-sans text-xs uppercase tracking-wider font-bold rounded-lg transition-colors cursor-pointer flex items-center shadow-[0_4px_14px_rgba(255,107,44,0.3)]"
                     >
                       <span>Transmit RFP Proposal</span>
                       <Send className="w-3.5 h-3.5 ml-2" />

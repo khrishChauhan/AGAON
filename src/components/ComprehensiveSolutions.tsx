@@ -31,7 +31,7 @@ const solutions = [
 
 export default function ComprehensiveSolutions() {
   return (
-    <section className="relative py-32 bg-[#07152E] overflow-hidden">
+    <section className="relative py-32 bg-[#111844] overflow-hidden">
       {/* Blueprint / Architectural Grid Background */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none opacity-[0.03] mix-blend-overlay"
@@ -83,17 +83,17 @@ export default function ComprehensiveSolutions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.7, delay: solution.delay }}
-              className="group relative bg-[#0A1A3A] p-10 border border-white/5 hover:border-white/10 transition-colors duration-500 overflow-hidden flex flex-col h-full cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] transform hover:-translate-y-2 ease-out"
+              className="group relative bg-[#111844] p-10 border border-white/5 hover:border-white/10 transition-colors duration-500 overflow-hidden flex flex-col h-full cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] transform hover:-translate-y-2 ease-out"
             >
               {/* Subtle architectural hover line */}
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#FF6B2C] to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#4B5694] to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
               
-              <div className="mb-10 text-white/40 group-hover:text-[#FF6B2C] transition-colors duration-500 transform group-hover:scale-110 group-hover:-translate-y-1 origin-left">
+              <div className="mb-10 text-white/40 group-hover:text-[#4B5694] transition-colors duration-500 transform group-hover:scale-110 group-hover:-translate-y-1 origin-left">
                 <solution.icon className="w-8 h-8" strokeWidth={1} />
               </div>
 
               <div className="flex-grow flex flex-col justify-end">
-                <h3 className="font-display text-2xl font-semibold text-white mb-4 group-hover:text-[#FF6B2C] transition-colors duration-300">
+                <h3 className="font-display text-2xl font-semibold text-white mb-4 group-hover:text-[#4B5694] transition-colors duration-300">
                   {solution.title}
                 </h3>
                 <p className="text-white/50 font-sans text-sm tracking-wide leading-relaxed mb-10 group-hover:text-white/70 transition-colors duration-300">
@@ -101,12 +101,12 @@ export default function ComprehensiveSolutions() {
                 </p>
 
                 <div className="mt-auto self-start relative inline-flex items-center space-x-2 pb-1 overflow-hidden group/link">
-                  <span className="font-sans text-[9px] uppercase tracking-[0.2em] font-bold text-white group-hover:text-[#FF6B2C] transition-colors">
+                  <span className="font-sans text-[9px] uppercase tracking-[0.2em] font-bold text-white group-hover:text-[#4B5694] transition-colors">
                     Explore
                   </span>
-                  <ArrowRight className="w-3 h-3 text-white group-hover:text-[#FF6B2C] transition-all transform group-hover:translate-x-1" />
+                  <ArrowRight className="w-3 h-3 text-white group-hover:text-[#4B5694] transition-all transform group-hover:translate-x-1" />
                   <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/20">
-                    <div className="absolute top-0 left-0 h-full bg-[#FF6B2C] w-0 group-hover:w-full transition-all duration-500 ease-out" />
+                    <div className="absolute top-0 left-0 h-full bg-[#4B5694] w-0 group-hover:w-full transition-all duration-500 ease-out" />
                   </div>
                 </div>
               </div>

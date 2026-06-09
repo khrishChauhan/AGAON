@@ -48,14 +48,14 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-32 bg-gradient-to-b from-[#f8fafc] to-white relative overflow-hidden flex flex-col justify-center">
+    <section className="py-32 bg-gradient-to-b from-[#EAE0CF] to-white relative overflow-hidden flex flex-col justify-center">
       {/* Subtle Premium Background Texture */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none opacity-[0.02]"
         style={{
           backgroundImage: `
-            linear-gradient(#07152E 1px, transparent 1px),
-            linear-gradient(90deg, #07152E 1px, transparent 1px)
+            linear-gradient(#111844 1px, transparent 1px),
+            linear-gradient(90deg, #111844 1px, transparent 1px)
           `,
           backgroundSize: '30px 30px',
         }}
@@ -73,11 +73,11 @@ export default function Testimonials() {
             transition={{ duration: 0.5 }}
             className="flex items-center justify-center space-x-3 mb-6"
           >
-            <div className="w-8 h-[1px] bg-[#FF6B2C]" />
-            <span className="text-[#FF6B2C] text-xs font-bold uppercase tracking-[0.2em]">
+            <div className="w-8 h-[1px] bg-[#4B5694]" />
+            <span className="text-[#4B5694] text-xs font-bold uppercase tracking-[0.2em]">
               CLIENT STORIES
             </span>
-            <div className="w-8 h-[1px] bg-[#FF6B2C]" />
+            <div className="w-8 h-[1px] bg-[#4B5694]" />
           </motion.div>
           
           <motion.h2 
@@ -85,7 +85,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-4xl md:text-5xl text-[#07152E] font-bold tracking-tight"
+            className="font-display text-4xl md:text-5xl text-[#111844] font-bold tracking-tight"
           >
             What Our Clients Say
           </motion.h2>
@@ -93,7 +93,7 @@ export default function Testimonials() {
 
         {/* Testimonial Carousel */}
         <div className="relative w-full min-h-[400px] flex flex-col items-center justify-center">
-          <div className="absolute top-0 text-[#07152E]/5 z-0 transform -translate-y-12">
+          <div className="absolute top-0 text-[#7288AE]/5 z-0 transform -translate-y-12">
             <Quote className="w-40 h-40 fill-current" />
           </div>
 
@@ -107,12 +107,12 @@ export default function Testimonials() {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="relative z-10 w-full flex flex-col items-center"
             >
-              <h3 className="font-display text-2xl md:text-4xl lg:text-4xl text-[#07152E] font-medium leading-relaxed mb-12 max-w-3xl">
+              <h3 className="font-display text-2xl md:text-4xl lg:text-4xl text-[#111844] font-medium leading-relaxed mb-12 max-w-3xl">
                 "{testimonials[currentIndex].text}"
               </h3>
               
               <div className="flex flex-col items-center">
-                <div className="w-20 h-20 rounded-full p-1 border-2 border-[#07152E]/10 mb-6 bg-white shadow-xl shadow-black/5">
+                <div className="w-20 h-20 rounded-full p-1 border-2 border-[#111844]/10 mb-6 bg-white shadow-xl shadow-black/5">
                   <img 
                     src={testimonials[currentIndex].image} 
                     alt={testimonials[currentIndex].name}
@@ -120,8 +120,8 @@ export default function Testimonials() {
                     className="w-full h-full rounded-full object-cover"
                   />
                 </div>
-                <span className="font-display text-xl text-[#07152E] font-bold mb-1">{testimonials[currentIndex].name}</span>
-                <span className="font-sans text-xs text-[#07152E]/50 font-bold uppercase tracking-[0.2em]">
+                <span className="font-display text-xl text-[#111844] font-bold mb-1">{testimonials[currentIndex].name}</span>
+                <span className="font-sans text-xs text-[#7288AE]/50 font-bold uppercase tracking-[0.2em]">
                   {testimonials[currentIndex].role} <span className="mx-2 opacity-50">|</span> {testimonials[currentIndex].location}
                 </span>
               </div>
@@ -133,7 +133,7 @@ export default function Testimonials() {
         <div className="flex items-center space-x-6 mt-16">
           <button 
             onClick={prev}
-            className="w-12 h-12 rounded-full border border-[#07152E]/20 flex items-center justify-center text-[#07152E]/50 hover:bg-[#07152E] hover:border-[#07152E] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+            className="w-12 h-12 rounded-full border border-[#111844]/20 flex items-center justify-center text-[#7288AE]/50 hover:bg-[#111844] hover:border-[#111844] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
           >
             <ChevronLeft className="w-5 h-5 ml-[-2px]" />
           </button>
@@ -148,8 +148,8 @@ export default function Testimonials() {
                 }}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
                   currentIndex === idx 
-                    ? 'bg-[#FF6B2C] w-6' 
-                    : 'bg-[#07152E]/20 hover:bg-[#07152E]/40'
+                    ? 'bg-[#4B5694] w-6' 
+                    : 'bg-[#111844]/20 hover:bg-[#111844]/40'
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
@@ -158,7 +158,7 @@ export default function Testimonials() {
 
           <button 
             onClick={next}
-            className="w-12 h-12 rounded-full border border-[#07152E]/20 flex items-center justify-center text-[#07152E]/50 hover:bg-[#07152E] hover:border-[#07152E] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+            className="w-12 h-12 rounded-full border border-[#111844]/20 flex items-center justify-center text-[#7288AE]/50 hover:bg-[#111844] hover:border-[#111844] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
           >
             <ChevronRight className="w-5 h-5 mr-[-2px]" />
           </button>

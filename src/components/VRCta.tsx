@@ -31,9 +31,9 @@ export default function VRCta() {
       </motion.div>
 
       {/* Cinematic Gradient Overlays */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#07152E] via-[#07152E]/60 to-transparent opacity-90" />
-      <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#07152E]/80 via-transparent to-[#07152E]/80" />
-      <div className="absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(7,21,46,0.6)_100%)]" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#111844] via-[#111844]/60 to-transparent opacity-90" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#111844]/80 via-transparent to-[#111844]/80" />
+      <div className="absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(17,24,68,0.6)_100%)]" />
 
       {/* Content Container */}
       <div className="relative z-20 max-w-4xl mx-auto px-6 md:px-12 text-center flex flex-col items-center">
@@ -46,7 +46,7 @@ export default function VRCta() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl flex items-center justify-center shadow-[0_0_40px_rgba(255,107,44,0.15)] mb-8"
         >
-          <Glasses className="w-8 h-8 text-[#FF6B2C]" strokeWidth={1.5} />
+          <Glasses className="w-8 h-8 text-[#4B5694]" strokeWidth={1.5} />
         </motion.div>
 
         {/* Heading */}
@@ -81,18 +81,18 @@ export default function VRCta() {
           className="relative inline-block group"
         >
           {/* Subtle glow effect around button */}
-          <div className="absolute inset-[-4px] bg-gradient-to-r from-[#FF6B2C] to-[#FF8B5C] rounded-full opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-700 pointer-events-none" />
+          <div className="absolute inset-[-4px] bg-gradient-to-r from-[#4B5694] to-[#7288AE] rounded-full opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-700 pointer-events-none" />
           
-          <button className="relative px-10 py-5 bg-white rounded-none overflow-hidden flex items-center space-x-6 border border-transparent hover:border-[#FF6B2C]/50 transition-all duration-500 shadow-[0_20px_40px_rgba(0,0,0,0.4)] group-hover:shadow-[0_20px_40px_rgba(255,107,44,0.2)] transform group-hover:-translate-y-1">
+          <button className="relative px-10 py-5 bg-white rounded-none overflow-hidden flex items-center space-x-6 border border-transparent hover:border-[#4B5694]/50 transition-all duration-500 shadow-[0_20px_40px_rgba(0,0,0,0.4)] group-hover:shadow-[0_20px_40px_rgba(255,107,44,0.2)] transform group-hover:-translate-y-1">
             {/* Button Hover Background Reveal */}
-            <div className="absolute inset-0 bg-[#07152E] transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+            <div className="absolute inset-0 bg-[#111844] transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
             
-            <span className="relative z-10 font-sans font-bold text-xs uppercase tracking-[0.2em] text-[#07152E] group-hover:text-white transition-colors duration-300">
+            <span className="relative z-10 font-sans font-bold text-xs uppercase tracking-[0.2em] text-[#111844] group-hover:text-white transition-colors duration-300">
               BOOK A VR CONSULTATION
             </span>
             
-            <div className="relative z-10 w-8 h-8 rounded-full bg-[#07152E]/5 group-hover:bg-[#FF6B2C] flex items-center justify-center transition-colors duration-500">
-              <ArrowRight className="w-4 h-4 text-[#07152E] group-hover:text-white transform group-hover:translate-x-1 transition-all duration-300" />
+            <div className="relative z-10 w-8 h-8 rounded-full bg-[#111844]/5 group-hover:bg-[#4B5694] flex items-center justify-center transition-colors duration-500">
+              <ArrowRight className="w-4 h-4 text-[#111844] group-hover:text-white transform group-hover:translate-x-1 transition-all duration-300" />
             </div>
           </button>
         </motion.div>

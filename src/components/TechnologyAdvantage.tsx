@@ -10,7 +10,7 @@ const bullets = [
 
 export default function TechnologyAdvantage() {
   return (
-    <section className="py-32 bg-[#0A1A3A] relative overflow-hidden">
+    <section className="py-32 bg-[#111844] relative overflow-hidden">
       {/* Blueprint / Architectural Grid Background */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none opacity-[0.03] mix-blend-overlay"
@@ -45,8 +45,8 @@ export default function TechnologyAdvantage() {
                 transition={{ duration: 0.5 }}
                 className="flex items-center space-x-3 mb-6"
               >
-                <div className="w-8 h-[1px] bg-[#FF6B2C]" />
-                <span className="text-[#FF6B2C] text-xs font-bold uppercase tracking-[0.2em]">
+                <div className="w-8 h-[1px] bg-[#4B5694]" />
+                <span className="text-[#4B5694] text-xs font-bold uppercase tracking-[0.2em]">
                   THE BUILDER-FOUNDER EDGE
                 </span>
               </motion.div>
@@ -82,8 +82,8 @@ export default function TechnologyAdvantage() {
                   key={idx} 
                   className="flex items-start space-x-4 group"
                 >
-                  <div className="w-6 h-6 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0 mt-1 group-hover:bg-[#FF6B2C]/20 group-hover:border-[#FF6B2C]/50 transition-colors duration-300">
-                    <ShieldCheck className="w-3 h-3 text-white/50 group-hover:text-[#FF6B2C] transition-colors" strokeWidth={2} />
+                  <div className="w-6 h-6 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0 mt-1 group-hover:bg-[#4B5694]/20 group-hover:border-[#4B5694]/50 transition-colors duration-300">
+                    <ShieldCheck className="w-3 h-3 text-white/50 group-hover:text-[#4B5694] transition-colors" strokeWidth={2} />
                   </div>
                   <p className="text-white/80 text-base leading-relaxed font-sans">{bullet}</p>
                 </motion.div>
@@ -100,8 +100,8 @@ export default function TechnologyAdvantage() {
             transition={{ duration: 1 }}
             className="relative lg:ml-auto w-full max-w-md lg:max-w-none ml-6 lg:ml-0"
           >
-            <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#07152E]/50 aspect-[4/5] lg:aspect-[3/4] shadow-[0_20px_60px_rgba(0,0,0,0.5)] group/img">
-               <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A3A] via-transparent to-transparent z-10 opacity-70" />
+            <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#111844]/50 aspect-[4/5] lg:aspect-[3/4] shadow-[0_20px_60px_rgba(0,0,0,0.5)] group/img">
+               <div className="absolute inset-0 bg-gradient-to-t from-[#111844] via-transparent to-transparent z-10 opacity-70" />
                <img 
                 src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80" 
                 alt="Construction Site Engineering"
@@ -116,17 +116,17 @@ export default function TechnologyAdvantage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="absolute -left-6 lg:-left-16 bottom-[10%] bg-[#07152E]/60 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 md:p-8 flex items-center space-x-6 shadow-[0_30px_60px_rgba(0,0,0,0.4)] hover:bg-[#07152E]/80 transition-colors duration-500 overflow-hidden group/card z-20"
+              className="absolute -left-6 lg:-left-16 bottom-[10%] bg-[#111844]/60 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 md:p-8 flex items-center space-x-6 shadow-[0_30px_60px_rgba(0,0,0,0.4)] hover:bg-[#111844]/80 transition-colors duration-500 overflow-hidden group/card z-20"
             >
                {/* Subtle background glow */}
-               <div className="absolute top-1/2 left-0 -translate-y-1/2 w-32 h-32 bg-[#FF6B2C]/10 blur-2xl rounded-full pointer-events-none opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
+               <div className="absolute top-1/2 left-0 -translate-y-1/2 w-32 h-32 bg-[#4B5694]/10 blur-2xl rounded-full pointer-events-none opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
                
-               <div className="w-16 h-16 bg-[#FF6B2C] rounded-[20px] flex items-center justify-center shrink-0 shadow-[0_10px_30px_rgba(255,107,44,0.4)] z-10 relative transition-transform duration-500 group-hover/card:scale-105">
+               <div className="w-16 h-16 bg-[#4B5694] rounded-[20px] flex items-center justify-center shrink-0 shadow-[0_10px_30px_rgba(255,107,44,0.4)] z-10 relative transition-transform duration-500 group-hover/card:scale-105">
                  <Smartphone className="w-8 h-8 text-white stroke-[1.5]" />
                </div>
                
                <div className="z-10 relative">
-                 <p className="font-display text-2xl font-bold text-white tracking-tight leading-none mb-2 group-hover/card:text-[#FF6B2C] transition-colors duration-300">
+                 <p className="font-display text-2xl font-bold text-white tracking-tight leading-none mb-2 group-hover/card:text-[#4B5694] transition-colors duration-300">
                    Client App
                  </p>
                  <div className="flex items-center space-x-2">

@@ -15,13 +15,13 @@ export default function ProjectShowcase() {
     : PROJECTS.filter(p => p.category === selectedCategory);
 
   return (
-    <section id="projects" className="py-32 bg-[#07152E] relative overflow-hidden">
+    <section id="projects" className="py-32 bg-[#111844] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full mb-24">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row justify-between items-end gap-12">
           <div className="max-w-2xl">
-            <span className="text-[#FF6B2C] text-[10px] font-bold uppercase tracking-[0.3em] block mb-6">
+            <span className="text-[#4B5694] text-[10px] font-bold uppercase tracking-[0.3em] block mb-6">
               Our Legacy
             </span>
             <h2 className="font-display text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05]">
@@ -73,7 +73,7 @@ export default function ProjectShowcase() {
                     className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
                   />
                   {/* Subtle Accent overlay */}
-                  <div className="absolute inset-0 bg-[#07152E]/10 transition-colors group-hover:bg-transparent" />
+                  <div className="absolute inset-0 bg-[#111844]/10 transition-colors group-hover:bg-transparent" />
                 </div>
               </div>
 
@@ -85,7 +85,7 @@ export default function ProjectShowcase() {
                   <span>{project.location}</span>
                 </div>
                 
-                <h3 className="font-display font-medium tracking-tight text-3xl md:text-5xl text-white mb-6 group-hover:text-[#FF6B2C] transition-colors duration-500">
+                <h3 className="font-display font-medium tracking-tight text-3xl md:text-5xl text-white mb-6 group-hover:text-[#4B5694] transition-colors duration-500">
                   {project.name}
                 </h3>
                 
@@ -104,7 +104,7 @@ export default function ProjectShowcase() {
                   </div>
                 </div>
 
-                <div className="w-12 h-12 border border-white/20 flex flex-col items-center justify-center group-hover:bg-white group-hover:text-[#07152E] text-white transition-colors duration-500">
+                <div className="w-12 h-12 border border-white/20 flex flex-col items-center justify-center group-hover:bg-white group-hover:text-[#111844] text-white transition-colors duration-500">
                   <ArrowRight className="w-4 h-4" />
                 </div>
               </div>
@@ -126,17 +126,17 @@ export default function ProjectShowcase() {
               
               <div className="flex justify-between items-start mb-16">
                 <div>
-                  <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tight text-[#07152E] mb-4">
+                  <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tight text-[#111844] mb-4">
                     {activeProject.name}
                   </h2>
-                  <p className="font-sans text-[10px] uppercase font-bold tracking-[0.2em] text-[#FF6B2C]">
+                  <p className="font-sans text-[10px] uppercase font-bold tracking-[0.2em] text-[#4B5694]">
                     {activeProject.location} — Delivered {activeProject.completionYear}
                   </p>
                 </div>
                 
                 <button
                   onClick={() => setActiveProject(null)}
-                  className="w-12 h-12 border border-[#07152E]/20 flex items-center justify-center hover:bg-[#07152E] hover:text-white transition-colors text-[#07152E]"
+                  className="w-12 h-12 border border-[#111844]/20 flex items-center justify-center hover:bg-[#111844] hover:text-white transition-colors text-[#111844]"
                 >
                   <X className="w-5 h-5" strokeWidth={1} />
                 </button>
@@ -153,39 +153,39 @@ export default function ProjectShowcase() {
 
               <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
                 <div className="md:col-span-8 space-y-12">
-                  <p className="text-[#07152E]/80 font-sans text-xl font-light leading-relaxed">
+                  <p className="text-[#7288AE]/80 font-sans text-xl font-light leading-relaxed">
                     {activeProject.longDescription}
                   </p>
                   
                   <div>
-                    <h4 className="font-display text-2xl font-bold text-[#07152E] mb-6">Execution Specifications</h4>
+                    <h4 className="font-display text-2xl font-bold text-[#111844] mb-6">Execution Specifications</h4>
                     <div className="space-y-4">
                       {activeProject.engineeringHighlights.map((hl, i) => (
-                        <div key={i} className="flex border-t border-[#07152E]/10 pt-4">
-                          <span className="font-mono text-[#FF6B2C] text-[10px] uppercase font-bold tracking-[0.2em] w-12 pt-1">{i + 1}.</span>
-                          <span className="font-sans text-[#07152E]/80 text-sm leading-relaxed">{hl}</span>
+                        <div key={i} className="flex border-t border-[#111844]/10 pt-4">
+                          <span className="font-mono text-[#4B5694] text-[10px] uppercase font-bold tracking-[0.2em] w-12 pt-1">{i + 1}.</span>
+                          <span className="font-sans text-[#7288AE]/80 text-sm leading-relaxed">{hl}</span>
                         </div>
                       ))}
                     </div>
                   </div>
                 </div>
 
-                <div className="md:col-span-4 border-t lg:border-t-0 lg:border-l border-[#07152E]/10 pt-8 lg:pt-0 lg:pl-16 space-y-8">
+                <div className="md:col-span-4 border-t lg:border-t-0 lg:border-l border-[#111844]/10 pt-8 lg:pt-0 lg:pl-16 space-y-8">
                   <div>
-                    <span className="block font-sans text-[10px] text-[#07152E]/50 tracking-[0.2em] uppercase mb-2">Category</span>
-                    <span className="block font-sans text-sm text-[#07152E] font-medium">{activeProject.category}</span>
+                    <span className="block font-sans text-[10px] text-[#7288AE]/50 tracking-[0.2em] uppercase mb-2">Category</span>
+                    <span className="block font-sans text-sm text-[#111844] font-medium">{activeProject.category}</span>
                   </div>
                   <div>
-                    <span className="block font-sans text-[10px] text-[#07152E]/50 tracking-[0.2em] uppercase mb-2">Client Profile</span>
-                    <span className="block font-sans text-sm text-[#07152E] font-medium">{activeProject.client}</span>
+                    <span className="block font-sans text-[10px] text-[#7288AE]/50 tracking-[0.2em] uppercase mb-2">Client Profile</span>
+                    <span className="block font-sans text-sm text-[#111844] font-medium">{activeProject.client}</span>
                   </div>
                   <div>
-                    <span className="block font-sans text-[10px] text-[#07152E]/50 tracking-[0.2em] uppercase mb-2">Investment Scope</span>
-                    <span className="block font-sans text-sm text-[#07152E] font-medium">{activeProject.value}</span>
+                    <span className="block font-sans text-[10px] text-[#7288AE]/50 tracking-[0.2em] uppercase mb-2">Investment Scope</span>
+                    <span className="block font-sans text-sm text-[#111844] font-medium">{activeProject.value}</span>
                   </div>
                   <div>
-                    <span className="block font-sans text-[10px] text-[#07152E]/50 tracking-[0.2em] uppercase mb-2">Structural Scale</span>
-                    <span className="block font-sans text-sm text-[#07152E] font-medium">{activeProject.size}</span>
+                    <span className="block font-sans text-[10px] text-[#7288AE]/50 tracking-[0.2em] uppercase mb-2">Structural Scale</span>
+                    <span className="block font-sans text-sm text-[#111844] font-medium">{activeProject.size}</span>
                   </div>
                 </div>
               </div>

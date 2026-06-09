@@ -8,7 +8,7 @@ export default function Hero() {
   const [floors, setFloors] = useState('');
 
   return (
-    <section className="relative min-h-screen pt-24 pb-12 overflow-hidden bg-[#F8F9FA] flex items-center">
+    <section className="relative min-h-screen pt-24 pb-12 overflow-hidden bg-[#EAE0CF] flex items-center">
       <div className="absolute top-0 right-0 w-full lg:w-1/2 h-1/2 lg:h-full z-0 lg:block hidden">
         <img
           src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80"
@@ -28,8 +28,8 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center space-x-3"
           >
-            <div className="w-8 h-[1px] bg-[#FF6B2C]" />
-            <span className="font-sans text-[10px] tracking-[0.2em] text-[#07152E] uppercase font-bold">
+            <div className="w-8 h-[1px] bg-[#4B5694]" />
+            <span className="font-sans text-[10px] tracking-[0.2em] text-[#111844] uppercase font-bold">
               The Smart Way To Build Your Dream Home
             </span>
           </motion.div>
@@ -38,10 +38,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-display text-5xl md:text-7xl lg:text-[5rem] font-bold tracking-tight leading-[1.05] text-[#07152E]"
+            className="font-display text-5xl md:text-7xl lg:text-[5rem] font-bold tracking-tight leading-[1.05] text-[#111844]"
           >
             Engineering Your Vision.<br />
-            <span className="text-[#FF6B2C] italic font-serif font-medium pr-4">
+            <span className="text-[#4B5694] italic font-serif font-medium pr-4">
               Delivering Certainty.
             </span>
           </motion.h1>
@@ -50,7 +50,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-[#07152E]/70 max-w-lg text-lg font-sans font-light leading-relaxed"
+            className="text-[#7288AE]/70 max-w-lg text-lg font-sans font-light leading-relaxed"
           >
             Experience transparent pricing, zero delays, and real-time project tracking from foundation to handover.
           </motion.p>
@@ -61,11 +61,11 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-6 pt-4"
           >
-            <button className="px-8 py-4 bg-[#07152E] text-white font-sans font-bold text-[10px] uppercase tracking-[0.15em] rounded-none transition-colors hover:bg-[#FF6B2C] flex items-center justify-center space-x-3 group">
+            <button className="px-8 py-4 bg-[#111844] text-white font-sans font-bold text-[10px] uppercase tracking-[0.15em] rounded-none transition-colors hover:bg-[#4B5694] flex items-center justify-center space-x-3 group">
               <span>Calculate Cost</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="px-8 py-4 bg-transparent border border-[#07152E]/20 text-[#07152E] font-sans font-bold text-[10px] uppercase tracking-[0.15em] rounded-none transition-colors hover:border-[#07152E] flex items-center justify-center">
+            <button className="px-8 py-4 bg-transparent border border-[#111844]/20 text-[#111844] font-sans font-bold text-[10px] uppercase tracking-[0.15em] rounded-none transition-colors hover:border-[#111844] flex items-center justify-center">
               View Portfolio
             </button>
           </motion.div>
@@ -80,23 +80,23 @@ export default function Hero() {
         >
           <div className="bg-white p-10 md:p-12 shadow-2xl border border-gray-100 relative">
             {/* Architectural accent */}
-            <div className="absolute top-0 right-0 w-20 h-20 border-t border-r border-[#FF6B2C] -mt-4 -mr-4 opacity-50 hidden lg:block" />
-            <div className="absolute bottom-0 left-0 w-20 h-20 border-b border-l border-[#07152E] -mb-4 -ml-4 opacity-10 hidden lg:block" />
+            <div className="absolute top-0 right-0 w-20 h-20 border-t border-r border-[#4B5694] -mt-4 -mr-4 opacity-50 hidden lg:block" />
+            <div className="absolute bottom-0 left-0 w-20 h-20 border-b border-l border-[#111844] -mb-4 -ml-4 opacity-10 hidden lg:block" />
 
             <div className="mb-10">
-              <h3 className="font-display text-3xl font-bold text-[#07152E] mb-3">Cost Estimator</h3>
-              <p className="text-[#07152E]/60 text-sm font-sans">Get an instant structural and finish estimate.</p>
+              <h3 className="font-display text-3xl font-bold text-[#111844] mb-3">Cost Estimator</h3>
+              <p className="text-[#7288AE]/60 text-sm font-sans">Get an instant structural and finish estimate.</p>
             </div>
 
             <div className="space-y-6">
               <div className="space-y-2">
-                <label className="text-[10px] font-sans uppercase tracking-[0.15em] text-[#07152E] font-bold">City</label>
+                <label className="text-[10px] font-sans uppercase tracking-[0.15em] text-[#111844] font-bold">City</label>
                 <div className="relative">
-                  <MapPin className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-[#FF6B2C]" />
+                  <MapPin className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-[#4B5694]" />
                   <select 
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
-                    className="w-full bg-transparent border-b border-[#07152E]/20 py-3 pl-8 pr-4 text-[#07152E] appearance-none focus:outline-none focus:border-[#FF6B2C] transition-colors rounded-none cursor-pointer"
+                    className="w-full bg-transparent border-b border-[#111844]/20 py-3 pl-8 pr-4 text-[#111844] appearance-none focus:outline-none focus:border-[#4B5694] transition-colors rounded-none cursor-pointer"
                   >
                     <option value="" disabled>Select project city</option>
                     <option value="mumbai">Mumbai</option>
@@ -108,27 +108,27 @@ export default function Hero() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-[10px] font-sans uppercase tracking-[0.15em] text-[#07152E] font-bold">Plot Area (Sq.Ft)</label>
+                <label className="text-[10px] font-sans uppercase tracking-[0.15em] text-[#111844] font-bold">Plot Area (Sq.Ft)</label>
                 <div className="relative">
-                  <Layers className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-[#FF6B2C]" />
+                  <Layers className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-[#4B5694]" />
                   <input 
                     type="number" 
                     placeholder="e.g. 2400"
                     value={area}
                     onChange={(e) => setArea(e.target.value)}
-                    className="w-full bg-transparent border-b border-[#07152E]/20 py-3 pl-8 pr-4 text-[#07152E] focus:outline-none focus:border-[#FF6B2C] transition-colors rounded-none placeholder:text-[#07152E]/30"
+                    className="w-full bg-transparent border-b border-[#111844]/20 py-3 pl-8 pr-4 text-[#111844] focus:outline-none focus:border-[#4B5694] transition-colors rounded-none placeholder:text-[#7288AE]/30"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-[10px] font-sans uppercase tracking-[0.15em] text-[#07152E] font-bold">Number of Floors</label>
+                <label className="text-[10px] font-sans uppercase tracking-[0.15em] text-[#111844] font-bold">Number of Floors</label>
                 <div className="relative">
-                  <Building2 className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-[#FF6B2C]" />
+                  <Building2 className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-[#4B5694]" />
                   <select 
                     value={floors}
                     onChange={(e) => setFloors(e.target.value)}
-                    className="w-full bg-transparent border-b border-[#07152E]/20 py-3 pl-8 pr-4 text-[#07152E] appearance-none focus:outline-none focus:border-[#FF6B2C] transition-colors rounded-none cursor-pointer"
+                    className="w-full bg-transparent border-b border-[#111844]/20 py-3 pl-8 pr-4 text-[#111844] appearance-none focus:outline-none focus:border-[#4B5694] transition-colors rounded-none cursor-pointer"
                   >
                     <option value="" disabled>Select floors</option>
                     <option value="1">G + 1 (2 Floors)</option>
@@ -139,7 +139,7 @@ export default function Hero() {
                 </div>
               </div>
 
-              <button className="w-full bg-[#07152E] hover:bg-[#FF6B2C] text-white py-4 mt-8 rounded-none font-sans font-bold text-[10px] uppercase tracking-[0.15em] transition-colors duration-300">
+              <button className="w-full bg-[#111844] hover:bg-[#4B5694] text-white py-4 mt-8 rounded-none font-sans font-bold text-[10px] uppercase tracking-[0.15em] transition-colors duration-300">
                 Get Instant Estimate
               </button>
             </div>

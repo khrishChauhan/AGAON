@@ -14,19 +14,19 @@ export default function Estimator() {
   };
 
   return (
-    <div className="pt-24 pb-32 bg-gradient-to-b from-[#f8fafc] to-white min-h-screen relative overflow-hidden flex flex-col justify-center">
+    <div className="pt-24 pb-32 bg-gradient-to-b from-[#EAE0CF] to-white min-h-screen relative overflow-hidden flex flex-col justify-center">
       {/* Premium Texture */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none opacity-[0.02]"
         style={{
           backgroundImage: `
-            linear-gradient(#07152E 1px, transparent 1px),
-            linear-gradient(90deg, #07152E 1px, transparent 1px)
+            linear-gradient(#111844 1px, transparent 1px),
+            linear-gradient(90deg, #111844 1px, transparent 1px)
           `,
           backgroundSize: '40px 40px',
         }}
       />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#FF6B2C]/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#4B5694]/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full flex flex-col items-center">
         
@@ -38,16 +38,16 @@ export default function Estimator() {
             transition={{ duration: 0.6 }}
             className="flex items-center justify-center space-x-3 mb-6"
           >
-            <div className="w-8 h-[1px] bg-[#FF6B2C]" />
-            <span className="text-[#FF6B2C] text-xs font-bold uppercase tracking-[0.2em]">BUDGET PLANNING</span>
-            <div className="w-8 h-[1px] bg-[#FF6B2C]" />
+            <div className="w-8 h-[1px] bg-[#4B5694]" />
+            <span className="text-[#4B5694] text-xs font-bold uppercase tracking-[0.2em]">BUDGET PLANNING</span>
+            <div className="w-8 h-[1px] bg-[#4B5694]" />
           </motion.div>
 
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
-            className="font-display text-4xl md:text-6xl text-[#07152E] font-bold tracking-tight mb-6"
+            className="font-display text-4xl md:text-6xl text-[#111844] font-bold tracking-tight mb-6"
           >
             Construction Cost Estimator
           </motion.h1>
@@ -56,7 +56,7 @@ export default function Estimator() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className="font-sans text-lg md:text-xl text-[#07152E]/60 font-light leading-relaxed"
+            className="font-sans text-lg md:text-xl text-[#7288AE]/60 font-light leading-relaxed"
           >
             Get a highly accurate preliminary budget for your project in seconds.
           </motion.p>
@@ -67,11 +67,11 @@ export default function Estimator() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
-          className="w-full max-w-5xl bg-white border border-[#07152E]/10 shadow-[0_30px_80px_rgba(7,21,46,0.06)] rounded-sm overflow-hidden flex flex-col lg:flex-row"
+          className="w-full max-w-5xl bg-white border border-[#111844]/10 shadow-[0_30px_80px_rgba(17,24,68,0.06)] rounded-sm overflow-hidden flex flex-col lg:flex-row"
         >
           {/* Left Panel: Form */}
           <div className="lg:w-[60%] p-10 md:p-14 order-2 lg:order-1">
-            <h2 className="font-display text-2xl md:text-3xl font-bold text-[#07152E] tracking-tight mb-10">
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-[#111844] tracking-tight mb-10">
               Project Details
             </h2>
             
@@ -82,20 +82,20 @@ export default function Estimator() {
                 
                 {/* City Selection */}
                 <div className="flex flex-col space-y-2">
-                  <label className="font-sans text-xs uppercase font-bold tracking-[0.15em] text-[#07152E]/70">
+                  <label className="font-sans text-xs uppercase font-bold tracking-[0.15em] text-[#7288AE]/70">
                     City of Construction
                   </label>
                   <input 
                     type="text"
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
-                    className="w-full bg-transparent border-b-2 border-[#07152E]/10 pb-3 pt-2 text-[#07152E] font-display text-xl font-medium focus:outline-none focus:border-[#FF6B2C] transition-colors"
+                    className="w-full bg-transparent border-b-2 border-[#111844]/10 pb-3 pt-2 text-[#111844] font-display text-xl font-medium focus:outline-none focus:border-[#4B5694] transition-colors"
                   />
                 </div>
 
                 {/* Plot Area */}
                 <div className="flex flex-col space-y-2">
-                  <label className="font-sans text-xs uppercase font-bold tracking-[0.15em] text-[#07152E]/70">
+                  <label className="font-sans text-xs uppercase font-bold tracking-[0.15em] text-[#7288AE]/70">
                     Plot Area (Sq. Ft.)
                   </label>
                   <input 
@@ -103,19 +103,19 @@ export default function Estimator() {
                     value={area}
                     onChange={(e) => setArea(e.target.value)}
                     placeholder="e.g. 1500"
-                    className="w-full bg-transparent border-b-2 border-[#07152E]/10 pb-3 pt-2 text-[#07152E] font-display text-xl font-medium placeholder:text-[#07152E]/20 focus:outline-none focus:border-[#FF6B2C] transition-colors"
+                    className="w-full bg-transparent border-b-2 border-[#111844]/10 pb-3 pt-2 text-[#111844] font-display text-xl font-medium placeholder:text-[#7288AE]/20 focus:outline-none focus:border-[#4B5694] transition-colors"
                   />
                 </div>
 
                 {/* Floors */}
                 <div className="flex flex-col space-y-2">
-                  <label className="font-sans text-xs uppercase font-bold tracking-[0.15em] text-[#07152E]/70">
+                  <label className="font-sans text-xs uppercase font-bold tracking-[0.15em] text-[#7288AE]/70">
                     Number of Floors
                   </label>
                   <select 
                     value={floors}
                     onChange={(e) => setFloors(e.target.value)}
-                    className="w-full bg-transparent border-b-2 border-[#07152E]/10 pb-3 pt-2 text-[#07152E] font-display text-xl font-medium focus:outline-none focus:border-[#FF6B2C] transition-colors appearance-none cursor-pointer rounded-none"
+                    className="w-full bg-transparent border-b-2 border-[#111844]/10 pb-3 pt-2 text-[#111844] font-display text-xl font-medium focus:outline-none focus:border-[#4B5694] transition-colors appearance-none cursor-pointer rounded-none"
                   >
                     <option value="Ground Only (G)">Ground Only (G)</option>
                     <option value="G + 1">G + 1</option>
@@ -126,13 +126,13 @@ export default function Estimator() {
 
                 {/* Finish Quality */}
                 <div className="flex flex-col space-y-2">
-                  <label className="font-sans text-xs uppercase font-bold tracking-[0.15em] text-[#07152E]/70">
+                  <label className="font-sans text-xs uppercase font-bold tracking-[0.15em] text-[#7288AE]/70">
                     Finish Quality
                   </label>
                   <select 
                     value={quality}
                     onChange={(e) => setQuality(e.target.value)}
-                    className="w-full bg-transparent border-b-2 border-[#07152E]/10 pb-3 pt-2 text-[#07152E] font-display text-xl font-medium focus:outline-none focus:border-[#FF6B2C] transition-colors appearance-none cursor-pointer rounded-none"
+                    className="w-full bg-transparent border-b-2 border-[#111844]/10 pb-3 pt-2 text-[#111844] font-display text-xl font-medium focus:outline-none focus:border-[#4B5694] transition-colors appearance-none cursor-pointer rounded-none"
                   >
                     <option value="Standard">Standard</option>
                     <option value="Premium">Premium</option>
@@ -145,11 +145,11 @@ export default function Estimator() {
               <div className="pt-8">
                 <button 
                   type="submit"
-                  className="w-full py-5 bg-[#07152E] text-white font-sans text-xs uppercase font-bold tracking-[0.2em] shadow-[0_15px_30px_rgba(7,21,46,0.15)] hover:shadow-[0_20px_40px_rgba(7,21,46,0.25)] hover:bg-[#FF6B2C] transition-all duration-300 transform hover:-translate-y-1"
+                  className="w-full py-5 bg-[#111844] text-white font-sans text-xs uppercase font-bold tracking-[0.2em] shadow-[0_15px_30px_rgba(17,24,68,0.15)] hover:shadow-[0_20px_40px_rgba(17,24,68,0.25)] hover:bg-[#4B5694] transition-all duration-300 transform hover:-translate-y-1"
                 >
                   CALCULATE ESTIMATE
                 </button>
-                <div className="mt-6 flex items-center justify-center space-x-2 text-[#07152E]/50">
+                <div className="mt-6 flex items-center justify-center space-x-2 text-[#7288AE]/50">
                   <Lock className="w-4 h-4" />
                   <span className="font-sans text-xs font-semibold tracking-wide uppercase">Secure & Confidential</span>
                 </div>
@@ -159,8 +159,8 @@ export default function Estimator() {
           </div>
 
           {/* Right Panel: What's Included */}
-          <div className="lg:w-[40%] bg-gradient-to-br from-[#07152E] to-[#0a1e42] p-10 md:p-14 text-white relative flex flex-col justify-center order-1 lg:order-2">
-            <div className="absolute inset-0 bg-[#FF6B2C]/5 pointer-events-none" />
+          <div className="lg:w-[40%] bg-gradient-to-br from-[#111844] to-[#111844] p-10 md:p-14 text-white relative flex flex-col justify-center order-1 lg:order-2">
+            <div className="absolute inset-0 bg-[#4B5694]/5 pointer-events-none" />
             <div className="relative z-10">
               <h2 className="font-display text-2xl md:text-3xl font-medium mb-10 text-white tracking-tight">
                 What's Included?
@@ -176,7 +176,7 @@ export default function Estimator() {
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start space-x-4">
                     <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5 border border-white/20">
-                      <Check className="w-3 h-3 text-[#FF6B2C]" />
+                      <Check className="w-3 h-3 text-[#4B5694]" />
                     </div>
                     <span className="font-sans text-sm tracking-wide font-light leading-relaxed text-white/90">
                       {item}

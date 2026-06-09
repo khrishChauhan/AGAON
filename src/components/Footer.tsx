@@ -10,7 +10,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#07152E] pt-32 pb-12 relative z-10 w-full overflow-hidden">
+    <footer className="bg-[#111844] pt-32 pb-12 relative z-10 w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col h-full">
         
         {/* Top Massive Typography */}
@@ -25,7 +25,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-24 mb-24 md:mb-32">
           
           <div className="col-span-2 md:col-span-1 space-y-8">
-            <h4 className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#FF6B2C] font-bold">AGAON CONSTRUCTION.</h4>
+            <h4 className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#4B5694] font-bold">AGAON CONSTRUCTION.</h4>
             <div className="text-white/60 font-sans text-sm leading-relaxed">
               Engineering Your Vision. Delivering Absolute Certainty. The smart way to build your dream project in India.
             </div>
@@ -35,7 +35,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#FF6B2C] font-bold mb-8">Company</h4>
+            <h4 className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#4B5694] font-bold mb-8">Company</h4>
             <ul className="space-y-4 font-sans text-sm text-white/60">
               <li>
                 <button onClick={() => handleNavigate('/about')} className="hover:text-white transition-colors cursor-pointer text-left">
@@ -61,7 +61,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#FF6B2C] font-bold mb-8">Services</h4>
+            <h4 className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#4B5694] font-bold mb-8">Services</h4>
             <ul className="space-y-4 font-sans text-sm text-white/60">
               <li>
                 <button onClick={() => handleNavigate('/services')} className="hover:text-white transition-colors cursor-pointer text-left">
@@ -87,7 +87,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#FF6B2C] font-bold mb-8">Regional Office</h4>
+            <h4 className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#4B5694] font-bold mb-8">Regional Office</h4>
             <ul className="space-y-4 font-sans text-sm text-white/60">
               <li className="font-bold text-white">Patna Regional Office</li>
               <li className="leading-relaxed">

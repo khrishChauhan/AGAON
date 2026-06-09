@@ -69,18 +69,18 @@ export default function Portfolio() {
     : portfolioData.filter(p => p.category === activeFilter);
 
   return (
-    <div className="pt-24 bg-[#F8F9FA] min-h-screen">
+    <div className="pt-24 bg-[#EAE0CF] min-h-screen">
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-24">
         
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
           <div className="max-w-2xl">
-            <span className="text-[#FF6B2C] text-[10px] font-bold uppercase tracking-[0.3em] block mb-6">
+            <span className="text-[#4B5694] text-[10px] font-bold uppercase tracking-[0.3em] block mb-6">
               Our Legacy
             </span>
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-[#07152E] tracking-tight leading-[1.05]">
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-[#111844] tracking-tight leading-[1.05]">
               Execution<br/>
-              <span className="font-serif italic font-medium text-[#07152E]/50">Portfolio.</span>
+              <span className="font-serif italic font-medium text-[#7288AE]/50">Portfolio.</span>
             </h1>
           </div>
           
@@ -91,8 +91,8 @@ export default function Portfolio() {
                 onClick={() => setActiveFilter(f)}
                 className={`text-[10px] uppercase font-bold tracking-[0.2em] pb-1 border-b transition-all duration-300 cursor-pointer ${
                   activeFilter === f 
-                    ? 'border-[#07152E] text-[#07152E]' 
-                    : 'border-transparent text-[#07152E]/40 hover:text-[#07152E]/70'
+                    ? 'border-[#111844] text-[#111844]' 
+                    : 'border-transparent text-[#7288AE]/40 hover:text-[#7288AE]/70'
                 }`}
               >
                 {f}
@@ -127,22 +127,22 @@ export default function Portfolio() {
                 {/* Details */}
                 <div className="flex flex-col flex-grow">
                   <div className="flex items-center justify-between mb-4">
-                    <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#07152E] font-bold">
+                    <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#111844] font-bold">
                       {project.category}
                     </span>
-                    <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#07152E]/50">
+                    <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-[#7288AE]/50">
                       {project.location}
                     </span>
                   </div>
                   
-                  <h3 className="font-display text-3xl font-bold text-[#07152E] mb-6 group-hover:text-[#FF6B2C] transition-colors">{project.name}</h3>
+                  <h3 className="font-display text-3xl font-bold text-[#111844] mb-6 group-hover:text-[#4B5694] transition-colors">{project.name}</h3>
                   
-                  <div className="mt-auto border-t border-[#07152E]/10 pt-4 flex items-center justify-between">
+                  <div className="mt-auto border-t border-[#111844]/10 pt-4 flex items-center justify-between">
                     <div>
-                      <span className="block font-sans text-[10px] text-[#07152E]/50 tracking-[0.2em] uppercase mb-1">Scale</span>
-                      <span className="block font-display text-[#07152E]">{project.area}</span>
+                      <span className="block font-sans text-[10px] text-[#7288AE]/50 tracking-[0.2em] uppercase mb-1">Scale</span>
+                      <span className="block font-display text-[#111844]">{project.area}</span>
                     </div>
-                    <div className="w-8 h-8 rounded-full border border-[#07152E]/20 flex items-center justify-center group-hover:bg-[#07152E] group-hover:text-white text-[#07152E] transition-colors">
+                    <div className="w-8 h-8 rounded-full border border-[#111844]/20 flex items-center justify-center group-hover:bg-[#111844] group-hover:text-white text-[#111844] transition-colors">
                       <ArrowRight className="w-3 h-3" />
                     </div>
                   </div>

@@ -12,7 +12,7 @@ import Contact from './pages/Contact';
 export default function App() {
   return (
     <Router>
-      <div className="bg-[#F8F9FA] text-[#07152E] font-sans antialiased overflow-x-hidden min-h-screen relative flex flex-col">
+      <div className="bg-[#EAE0CF] text-[#111844] font-sans antialiased overflow-x-hidden min-h-screen relative flex flex-col">
         <div className="relative z-10 w-full flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">

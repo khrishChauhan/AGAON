@@ -8,7 +8,7 @@ const ACCREDITATIONS = [
     title: 'ISO 9001:2026',
     agency: 'International Standardization Org',
     summary: 'Absolute operational accuracy and sub-millimeter precision calibration limits during foundation casting.',
-    accent: '#FF6B2C'
+    accent: '#4B5694'
   },
   {
     title: 'LEED Platinum',
@@ -32,7 +32,7 @@ const ACCREDITATIONS = [
 
 export default function LeadershipAccreditation() {
   return (
-    <section id="leadership" className="py-24 bg-[#07152E] relative overflow-hidden border-t border-white/10">
+    <section id="leadership" className="py-24 bg-[#111844] relative overflow-hidden border-t border-white/10">
       {/* Decorative technical grids */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px]" />
       
@@ -40,8 +40,8 @@ export default function LeadershipAccreditation() {
         
         {/* Executive Section Header */}
         <div className="max-w-3xl mb-16">
-          <div className="flex items-center space-x-2 text-[#FF6B2C] font-mono text-xs tracking-[0.25em] uppercase mb-4 font-semibold">
-            <ShieldCheck className="w-4 h-4 text-[#FF6B2C]" />
+          <div className="flex items-center space-x-2 text-[#4B5694] font-mono text-xs tracking-[0.25em] uppercase mb-4 font-semibold">
+            <ShieldCheck className="w-4 h-4 text-[#4B5694]" />
             <span>Enterprise Supervision</span>
           </div>
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-white">
@@ -64,18 +64,18 @@ export default function LeadershipAccreditation() {
               className="group bg-[#0D2248]/40 rounded-[20px] overflow-hidden border border-[rgba(255,107,44,0.3)] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] backdrop-blur-[10px] flex flex-col justify-between"
             >
               {/* Image Block */}
-              <div className="relative aspect-square overflow-hidden bg-[#07152E]">
+              <div className="relative aspect-square overflow-hidden bg-[#111844]">
                 <img
                   src={executive.image}
                   alt={executive.name}
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#07152E]/70 via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111844]/70 via-transparent to-transparent opacity-80" />
                 
                 {/* Credentials block over image */}
-                <div className="absolute bottom-4 left-4 right-4 flex items-center space-x-2 bg-[#07152E]/80 backdrop-blur-sm px-3.5 py-1.5 rounded-lg border border-white/5">
-                  <GraduationCap className="w-4 h-4 text-[#FF6B2C] shrink-0" />
+                <div className="absolute bottom-4 left-4 right-4 flex items-center space-x-2 bg-[#111844]/80 backdrop-blur-sm px-3.5 py-1.5 rounded-lg border border-white/5">
+                  <GraduationCap className="w-4 h-4 text-[#4B5694] shrink-0" />
                   <span className="font-mono text-[9px] text-slate-350 uppercase tracking-wider truncate">
                     {executive.credentials}
                   </span>
@@ -88,7 +88,7 @@ export default function LeadershipAccreditation() {
                   <h3 className="font-display font-bold tracking-tight text-lg md:text-xl text-white">
                     {executive.name}
                   </h3>
-                  <span className="block font-mono text-[10px] uppercase text-[#FF6B2C]/80 tracking-widest font-semibold mt-1">
+                  <span className="block font-mono text-[10px] uppercase text-[#4B5694]/80 tracking-widest font-semibold mt-1">
                     {executive.role}
                   </span>
                   <p className="mt-4 text-slate-300 font-sans text-xs md:text-sm leading-relaxed">
@@ -106,8 +106,8 @@ export default function LeadershipAccreditation() {
             
             {/* Standard texts */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="flex items-center space-x-2 text-[#FF6B2C] font-mono text-xs tracking-[0.25em] uppercase font-semibold">
-                <Award className="w-4 h-4 text-[#FF6B2C]" />
+              <div className="flex items-center space-x-2 text-[#4B5694] font-mono text-xs tracking-[0.25em] uppercase font-semibold">
+                <Award className="w-4 h-4 text-[#4B5694]" />
                 <span>Statutory Compliance Metrics</span>
               </div>
               <h3 className="font-display text-2xl md:text-4xl font-bold tracking-tight text-white">
@@ -158,7 +158,7 @@ export default function LeadershipAccreditation() {
 
                   <div className="mt-6 pt-4 border-t border-white/5 flex justify-between items-center font-mono text-[9px] text-slate-500 uppercase tracking-widest">
                     <span>Authorized Agency</span>
-                    <span className="text-right text-[#FF6B2C]/80 font-bold truncate max-w-[150px]">
+                    <span className="text-right text-[#4B5694]/80 font-bold truncate max-w-[150px]">
                       {acc.agency}
                     </span>
                   </div>

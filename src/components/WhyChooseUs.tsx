@@ -12,7 +12,7 @@ const blockData = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-32 bg-[#07152E] relative z-10">
+    <section className="py-32 bg-[#111844] relative z-10">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-5">
@@ -34,13 +34,13 @@ export default function WhyChooseUs() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   key={idx}
-                  className="group flex flex-col sm:flex-row sm:items-baseline justify-between py-8 border-b border-white/20 hover:border-[#FF6B2C] transition-colors duration-500 cursor-pointer"
+                  className="group flex flex-col sm:flex-row sm:items-baseline justify-between py-8 border-b border-white/20 hover:border-[#4B5694] transition-colors duration-500 cursor-pointer"
                 >
                   <div className="flex items-baseline space-x-6">
-                    <span className="font-mono text-[10px] text-white/40 group-hover:text-[#FF6B2C] transition-colors">
+                    <span className="font-mono text-[10px] text-white/40 group-hover:text-[#4B5694] transition-colors">
                       0{idx + 1}
                     </span>
-                    <h3 className="font-display text-2xl md:text-3xl font-medium text-white group-hover:text-[#FF6B2C] transition-colors">
+                    <h3 className="font-display text-2xl md:text-3xl font-medium text-white group-hover:text-[#4B5694] transition-colors">
                       {block.title}
                     </h3>
                   </div>

@@ -55,14 +55,14 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="pt-24 bg-gradient-to-b from-[#f8fafc] to-white min-h-screen relative overflow-hidden">
+    <div className="pt-24 bg-gradient-to-b from-[#EAE0CF] to-white min-h-screen relative overflow-hidden">
       {/* Subtle background luxury texturing */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none opacity-[0.02]"
         style={{
           backgroundImage: `
-            linear-gradient(#07152E 1px, transparent 1px),
-            linear-gradient(90deg, #07152E 1px, transparent 1px)
+            linear-gradient(#111844 1px, transparent 1px),
+            linear-gradient(90deg, #111844 1px, transparent 1px)
           `,
           backgroundSize: '40px 40px',
         }}
@@ -78,15 +78,15 @@ export default function ServicesPage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex items-center space-x-3 mb-6"
           >
-            <div className="w-12 h-[1px] bg-[#FF6B2C]" />
-            <span className="text-[#FF6B2C] text-xs font-bold uppercase tracking-[0.2em]">OUR DISCIPLINES</span>
+            <div className="w-12 h-[1px] bg-[#4B5694]" />
+            <span className="text-[#4B5694] text-xs font-bold uppercase tracking-[0.2em]">OUR DISCIPLINES</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-            className="font-display text-5xl md:text-7xl font-bold tracking-tight text-[#07152E] leading-[1.1] mb-10"
+            className="font-display text-5xl md:text-7xl font-bold tracking-tight text-[#111844] leading-[1.1] mb-10"
           >
             Our Services
           </motion.h1>
@@ -95,7 +95,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="font-sans text-xl md:text-2xl text-[#07152E]/80 font-light leading-relaxed max-w-3xl"
+            className="font-sans text-xl md:text-2xl text-[#7288AE]/80 font-light leading-relaxed max-w-3xl"
           >
             Enterprise-grade execution tailored for your specific project needs. We provide full-stack construction solutions.
           </motion.p>
@@ -117,8 +117,8 @@ export default function ServicesPage() {
                 transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
                 className={`lg:col-span-7 relative group ${service.imageLeft ? 'lg:order-1' : 'lg:order-2'}`}
               >
-                <div className="absolute inset-0 bg-[#FF6B2C]/5 translate-x-3 translate-y-3 -z-10 transition-transform duration-500 group-hover:translate-x-5 group-hover:translate-y-5" />
-                <div className="relative border border-[#07152E]/10 bg-white p-3 md:p-4 shadow-[0_20px_50px_rgba(7,21,46,0.06)]">
+                <div className="absolute inset-0 bg-[#4B5694]/5 translate-x-3 translate-y-3 -z-10 transition-transform duration-500 group-hover:translate-x-5 group-hover:translate-y-5" />
+                <div className="relative border border-[#111844]/10 bg-white p-3 md:p-4 shadow-[0_20px_50px_rgba(17,24,68,0.06)]">
                   <div className="relative overflow-hidden aspect-[16/10] bg-gray-50">
                     <img 
                       src={service.image} 
@@ -126,7 +126,7 @@ export default function ServicesPage() {
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#07152E]/10 to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#111844]/10 to-transparent pointer-events-none" />
                   </div>
                 </div>
               </motion.div>
@@ -140,26 +140,26 @@ export default function ServicesPage() {
                 className={`lg:col-span-5 space-y-8 ${service.imageLeft ? 'lg:order-2' : 'lg:order-1'}`}
               >
                 <div className="flex items-center space-x-4">
-                  <span className="font-sans text-[#FF6B2C] text-sm font-bold tracking-widest">{service.number}</span>
-                  <div className="w-8 h-[1px] bg-[#07152E]/15" />
-                  <span className="font-sans text-[#07152E]/50 text-xs font-bold uppercase tracking-[0.15em]">SERVICE DIVISION</span>
+                  <span className="font-sans text-[#4B5694] text-sm font-bold tracking-widest">{service.number}</span>
+                  <div className="w-8 h-[1px] bg-[#111844]/15" />
+                  <span className="font-sans text-[#7288AE]/50 text-xs font-bold uppercase tracking-[0.15em]">SERVICE DIVISION</span>
                 </div>
 
-                <h2 className="font-display text-3xl md:text-4xl text-[#07152E] font-bold tracking-tight">
+                <h2 className="font-display text-3xl md:text-4xl text-[#111844] font-bold tracking-tight">
                   {service.title}
                 </h2>
 
-                <p className="font-sans text-[#07152E]/70 text-base md:text-lg font-light leading-relaxed">
+                <p className="font-sans text-[#7288AE]/70 text-base md:text-lg font-light leading-relaxed">
                   {service.description}
                 </p>
 
-                <div className="pt-8 border-t border-[#07152E]/10">
-                  <span className="font-sans text-[10px] text-[#07152E]/50 tracking-[0.2em] uppercase font-bold block mb-4">Core Standards</span>
+                <div className="pt-8 border-t border-[#111844]/10">
+                  <span className="font-sans text-[10px] text-[#7288AE]/50 tracking-[0.2em] uppercase font-bold block mb-4">Core Standards</span>
                   <ul className="space-y-3">
                     {service.features.map((feature, fIdx) => (
-                      <li key={fIdx} className="flex items-center space-x-3 text-[#07152E] font-sans text-sm font-medium">
-                        <div className="w-5 h-5 rounded-full bg-[#FF6B2C]/10 flex items-center justify-center shrink-0">
-                          <Check className="w-3 h-3 text-[#FF6B2C]" strokeWidth={3} />
+                      <li key={fIdx} className="flex items-center space-x-3 text-[#111844] font-sans text-sm font-medium">
+                        <div className="w-5 h-5 rounded-full bg-[#4B5694]/10 flex items-center justify-center shrink-0">
+                          <Check className="w-3 h-3 text-[#4B5694]" strokeWidth={3} />
                         </div>
                         <span>{feature}</span>
                       </li>

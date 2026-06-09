@@ -28,18 +28,18 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-32 bg-[#F8F9FA] relative">
+    <section className="py-32 bg-[#EAE0CF] relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
           <div className="max-w-2xl">
-            <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight text-[#07152E] mb-6">
+            <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight text-[#111844] mb-6">
               Sectors of Expertise.
             </h2>
-            <p className="text-[#07152E]/70 font-sans text-lg font-light leading-relaxed">
+            <p className="text-[#7288AE]/70 font-sans text-lg font-light leading-relaxed">
               We bring software-level precision to physical structures. Our divisions operate with extreme accountability across three core construction disciplines.
             </p>
           </div>
-          <button className="flex items-center space-x-2 text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-[#07152E] border-b border-[#07152E] pb-1 hover:text-[#FF6B2C] hover:border-[#FF6B2C] transition-colors">
+          <button className="flex items-center space-x-2 text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-[#111844] border-b border-[#111844] pb-1 hover:text-[#4B5694] hover:border-[#4B5694] transition-colors">
             <span>View All Services</span>
             <ArrowRight className="w-4 h-4" />
           </button>
@@ -56,7 +56,7 @@ export default function Services() {
               className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-24 items-center`}
             >
               {/* Image Block */}
-              <div className="w-full lg:w-1/2 overflow-hidden bg-[#07152E] relative">
+              <div className="w-full lg:w-1/2 overflow-hidden bg-[#111844] relative">
                 <div className="aspect-[4/5] overflow-hidden">
                   <img 
                     src={service.image} 
@@ -69,20 +69,20 @@ export default function Services() {
 
               {/* Text Content */}
               <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                <span className="text-[#FF6B2C] font-mono text-[10px] uppercase tracking-[0.2em] font-bold mb-6 block">
+                <span className="text-[#4B5694] font-mono text-[10px] uppercase tracking-[0.2em] font-bold mb-6 block">
                   0{idx + 1} // {service.category}
                 </span>
-                <h3 className="font-display text-4xl lg:text-5xl font-bold text-[#07152E] mb-6">
+                <h3 className="font-display text-4xl lg:text-5xl font-bold text-[#111844] mb-6">
                   {service.title}
                 </h3>
-                <p className="text-[#07152E]/70 text-base lg:text-lg font-light leading-relaxed mb-10 max-w-md">
+                <p className="text-[#7288AE]/70 text-base lg:text-lg font-light leading-relaxed mb-10 max-w-md">
                   {service.description}
                 </p>
                 
                 <button className="self-start relative group pb-2">
-                  <span className="font-sans text-[10px] uppercase tracking-[0.2em] font-bold text-[#07152E] group-hover:text-[#FF6B2C] transition-colors">Explore Division</span>
-                  <div className="absolute bottom-0 left-0 w-full h-[1px] bg-[#07152E]/20">
-                    <div className="absolute top-0 left-0 h-full bg-[#FF6B2C] w-0 group-hover:w-full transition-all duration-500 ease-out" />
+                  <span className="font-sans text-[10px] uppercase tracking-[0.2em] font-bold text-[#111844] group-hover:text-[#4B5694] transition-colors">Explore Division</span>
+                  <div className="absolute bottom-0 left-0 w-full h-[1px] bg-[#111844]/20">
+                    <div className="absolute top-0 left-0 h-full bg-[#4B5694] w-0 group-hover:w-full transition-all duration-500 ease-out" />
                   </div>
                 </button>
               </div>

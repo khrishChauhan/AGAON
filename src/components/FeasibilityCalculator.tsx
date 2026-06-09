@@ -102,7 +102,7 @@ export default function FeasibilityCalculator() {
   }, [sector, materialStandard, totalArea, storeys, activeSector, activeStandard]);
 
   return (
-    <section id="calculator" className="py-24 bg-[#07152E] relative overflow-hidden border-t border-white/10">
+    <section id="calculator" className="py-24 bg-[#111844] relative overflow-hidden border-t border-white/10">
       {/* Structural background details */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:30px_30px]" />
 
@@ -110,8 +110,8 @@ export default function FeasibilityCalculator() {
         
         {/* Header */}
         <div className="max-w-3xl mb-16">
-          <div className="flex items-center space-x-2 text-[#FF6B2C] font-mono text-xs tracking-[0.25em] uppercase mb-4 font-semibold">
-            <Calculator className="w-4 h-4 text-[#FF6B2C]" />
+          <div className="flex items-center space-x-2 text-[#4B5694] font-mono text-xs tracking-[0.25em] uppercase mb-4 font-semibold">
+            <Calculator className="w-4 h-4 text-[#4B5694]" />
             <span>Feasibility Modeling Core</span>
           </div>
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-white">
@@ -126,7 +126,7 @@ export default function FeasibilityCalculator() {
           {/* Controls Panel */}
           <div className="lg:col-span-7 bg-[#0D2248]/40 p-8 md:p-10 rounded-[20px] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] border border-[rgba(255,107,44,0.3)] backdrop-blur-[10px] space-y-8">
             <h3 className="font-display text-lg font-bold text-white flex items-center border-b border-white/10 pb-4">
-              <Sliders className="w-5 h-5 text-[#FF6B2C] mr-3" />
+              <Sliders className="w-5 h-5 text-[#4B5694] mr-3" />
               Structural Parameters
             </h3>
 
@@ -142,8 +142,8 @@ export default function FeasibilityCalculator() {
                     onClick={() => setSector(key)}
                     className={`p-4 rounded-xl text-left border transition-all duration-300 cursor-pointer ${
                       sector === key
-                        ? 'border-[#FF6B2C] bg-[#FF6B2C]/10 text-white shadow-[0_4px_20px_rgba(255,107,44,0.15)]'
-                        : 'border-white/10 bg-[#07152E]/30 text-slate-400 hover:bg-[#07152E]/50 hover:text-white'
+                        ? 'border-[#4B5694] bg-[#4B5694]/10 text-white shadow-[0_4px_20px_rgba(255,107,44,0.15)]'
+                        : 'border-white/10 bg-[#111844]/30 text-slate-400 hover:bg-[#111844]/50 hover:text-white'
                     }`}
                   >
                     <span className="block font-sans font-bold text-xs">
@@ -161,7 +161,7 @@ export default function FeasibilityCalculator() {
             <div className="space-y-3">
               <div className="flex justify-between items-center text-xs font-mono">
                 <span className="font-bold text-slate-400 uppercase">2. Planned Building Footprint Area</span>
-                <span className="text-[#FF6B2C] font-semibold">
+                <span className="text-[#4B5694] font-semibold">
                   {totalArea.toLocaleString()} Sq. Ft.
                 </span>
               </div>
@@ -172,7 +172,7 @@ export default function FeasibilityCalculator() {
                 step="25000"
                 value={totalArea}
                 onChange={(e) => setTotalArea(Number(e.target.value))}
-                className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#FF6B2C]"
+                className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#4B5694]"
               />
               <div className="flex justify-between text-[10px] font-mono text-slate-500">
                 <span>50K sq ft</span>
@@ -185,7 +185,7 @@ export default function FeasibilityCalculator() {
             <div className="space-y-3">
               <div className="flex justify-between items-center text-xs font-mono">
                 <span className="font-bold text-slate-400 uppercase">3. Total Floor Count / Height Profile</span>
-                <span className="text-[#FF6B2C] font-semibold">
+                <span className="text-[#4B5694] font-semibold">
                   {storeys} Storeys ({Math.round(storeys * 3.6)} meters estimated)
                 </span>
               </div>
@@ -196,7 +196,7 @@ export default function FeasibilityCalculator() {
                 step="1"
                 value={storeys}
                 onChange={(e) => setStoreys(Number(e.target.value))}
-                className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#FF6B2C]"
+                className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#4B5694]"
               />
               <div className="flex justify-between text-[10px] font-mono text-slate-500">
                 <span>Low-Rise (1 Storey)</span>
@@ -217,8 +217,8 @@ export default function FeasibilityCalculator() {
                     onClick={() => setMaterialStandard(std.id)}
                     className={`p-4 rounded-xl border transition-all duration-300 flex items-center justify-between cursor-pointer ${
                       materialStandard === std.id
-                        ? 'border-[#FF6B2C] bg-[#FF6B2C]/5'
-                        : 'border-white/10 hover:border-white/30 bg-[#07152E]/30'
+                        ? 'border-[#4B5694] bg-[#4B5694]/5'
+                        : 'border-white/10 hover:border-white/30 bg-[#111844]/30'
                     }`}
                   >
                     <div>
@@ -234,7 +234,7 @@ export default function FeasibilityCalculator() {
 
                     <div className="text-right">
                       <span className="block text-[10px] text-slate-500 font-mono">Reliability Rating</span>
-                      <span className="block font-mono text-xs font-bold text-[#FF6B2C]">{std.qualityRating}</span>
+                      <span className="block font-mono text-xs font-bold text-[#4B5694]">{std.qualityRating}</span>
                     </div>
                   </div>
                 ))}
@@ -248,14 +248,14 @@ export default function FeasibilityCalculator() {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,107,44,0.15),transparent_40%)]" />
 
             <div className="relative z-10">
-              <div className="flex items-center space-x-2 text-[#FF6B2C] font-mono text-[10px] tracking-widest uppercase mb-12">
+              <div className="flex items-center space-x-2 text-[#4B5694] font-mono text-[10px] tracking-widest uppercase mb-12">
                 <ShieldCheck className="w-4 h-4" />
                 <span>Calculated Civil Matrix Output</span>
               </div>
 
               {/* Big Estimated cost layout */}
               <div className="border-b border-white/10 pb-8 mb-8 space-y-1.5">
-                <span className="block font-mono text-[9px] text-[#FF6B2C] uppercase tracking-widest">
+                <span className="block font-mono text-[9px] text-[#4B5694] uppercase tracking-widest">
                   Comprehensive Investment Projection
                 </span>
                 <h4 className="font-display text-3xl md:text-4xl font-extrabold tracking-tight">
@@ -287,7 +287,7 @@ export default function FeasibilityCalculator() {
                   </span>
                 </div>
                 <div>
-                  <span className="block font-mono text-[9px] text-[#FF6B2C] uppercase tracking-widest flex items-center">
+                  <span className="block font-mono text-[9px] text-[#4B5694] uppercase tracking-widest flex items-center">
                     <TrendingDown className="w-3.5 h-3.5 mr-1" /> Carbon Saved
                   </span>
                   <span className="block font-sans font-bold text-lg text-emerald-400 mt-1">
@@ -300,7 +300,7 @@ export default function FeasibilityCalculator() {
             {/* Action Section */}
             <div className="mt-12 pt-8 border-t border-white/5 space-y-4">
               <div className="flex items-start bg-white/5 p-4 rounded-xl border border-white/10">
-                <div className="w-1.5 h-1.5 bg-[#FF6B2C] rounded-full mt-1.5 mr-3 shrink-0" />
+                <div className="w-1.5 h-1.5 bg-[#4B5694] rounded-full mt-1.5 mr-3 shrink-0" />
                 <p className="text-xs text-slate-300 font-sans leading-relaxed">
                   Calculated structural parameters represent Level 2 approximate simulation accuracy. Agaon guarantees these figures within a ±5% drift threshold on final RFP approval.
                 </p>
@@ -314,7 +314,7 @@ export default function FeasibilityCalculator() {
                     // Preset some fields if any integration states
                   }
                 }}
-                className="w-full bg-[#FF6B2C] hover:bg-[#ff7b42] text-white py-4 rounded-xl font-sans font-bold text-xs uppercase tracking-wider flex items-center justify-center transition-all cursor-pointer shadow-lg"
+                className="w-full bg-[#4B5694] hover:bg-[#7288AE] text-white py-4 rounded-xl font-sans font-bold text-xs uppercase tracking-wider flex items-center justify-center transition-all cursor-pointer shadow-lg"
               >
                 <span>Request Formal Cost Analysis Brochure</span>
                 <ArrowRight className="ml-2 w-4 h-4" />
