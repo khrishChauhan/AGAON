@@ -2,7 +2,12 @@ import React from "react";
 import { motion } from "motion/react";
 export default function About() {
   return (
-    <div className="pt-24 pb-32 bg-gradient-to-b from-[#EAE0CF] to-white min-h-screen relative overflow-hidden">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      className="pt-24 pb-32 bg-gradient-to-b from-[#EAE0CF] to-white min-h-screen relative overflow-hidden"
+    >
       {" "}
       {/* Subtle background luxury texturing */}{" "}
       <div
@@ -59,9 +64,10 @@ export default function About() {
           {" "}
           {/* Left: Beautiful Architectural Frame & Image */}{" "}
           <motion.div
-            initial={{ opacity: 0, scale: 0.98, y: 35 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4, ease: [0.19, 1, 0.22, 1] }}
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:col-span-6 relative group"
           >
             {" "}
@@ -85,9 +91,10 @@ export default function About() {
             {" "}
             {/* Vision Segment */}{" "}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               className="space-y-8"
             >
               {" "}
@@ -122,9 +129,10 @@ export default function About() {
             </motion.div>{" "}
             {/* Metrics Segment */}{" "}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
               className="border-t border-[#111844]/10 pt-10"
             >
               {" "}
@@ -165,6 +173,6 @@ export default function About() {
           </div>{" "}
         </div>{" "}
       </div>{" "}
-    </div>
+    </motion.div>
   );
 }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "motion/react";
 import {
   Phone,
   Mail,
@@ -20,7 +21,12 @@ export default function Contact() {
     },
   ];
   return (
-    <div className="pt-24 min-h-screen bg-gradient-to-b from-slate-50 to-[#EAE0CF] relative overflow-hidden">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      className="pt-24 min-h-screen bg-gradient-to-b from-slate-50 to-[#EAE0CF] relative overflow-hidden"
+    >
       {" "}
       {/* Subtle Grid Background */}{" "}
       <div
@@ -272,6 +278,6 @@ export default function Contact() {
           </div>{" "}
         </div>{" "}
       </div>{" "}
-    </div>
+    </motion.div>
   );
 }

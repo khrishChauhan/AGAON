@@ -83,10 +83,10 @@ export default function ComprehensiveSolutions() {
           {solutions.map((solution, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.7, delay: solution.delay }}
+              transition={{ duration: 0.8, delay: idx * 0.08, ease: "easeOut" }}
               className="group relative bg-[#111844] p-10 border border-white/5 hover:border-white/10 transition-colors duration-500 overflow-hidden flex flex-col h-full cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] transform hover:-translate-y-2 ease-out"
             >
               {" "}

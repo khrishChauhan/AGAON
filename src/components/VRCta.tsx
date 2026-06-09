@@ -7,7 +7,7 @@ export default function VRCta() {
     target: containerRef,
     offset: ["start end", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["-40px", "40px"]);
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.05, 1.1]);
   return (
     <section

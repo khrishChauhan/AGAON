@@ -68,10 +68,10 @@ export default function ProjectShowcase() {
             <motion.div
               layout
               key={project.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 1.03 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               className={`flex flex-col ${idx % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 lg:gap-24 items-center group cursor-pointer`}
               onClick={() => setActiveProject(project)}
             >

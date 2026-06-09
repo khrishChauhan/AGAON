@@ -71,7 +71,12 @@ export default function Portfolio() {
       ? portfolioData
       : portfolioData.filter((p) => p.category === activeFilter);
   return (
-    <div className="pt-24 bg-[#EAE0CF] min-h-screen">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      className="pt-24 bg-[#EAE0CF] min-h-screen"
+    >
       {" "}
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-24">
         {" "}
@@ -118,10 +123,10 @@ export default function Portfolio() {
             {filteredProjects.map((project) => (
               <motion.div
                 layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 1.03 }}
+                animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
                 key={project.id}
                 className="group cursor-pointer flex flex-col"
               >
@@ -175,6 +180,6 @@ export default function Portfolio() {
           </AnimatePresence>{" "}
         </motion.div>{" "}
       </div>{" "}
-    </div>
+    </motion.div>
   );
 }

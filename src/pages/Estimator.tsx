@@ -10,7 +10,12 @@ export default function Estimator() {
     e.preventDefault(); // In a real app, this would process the estimate or proceed to a result page/modal.
   };
   return (
-    <div className="pt-24 pb-32 bg-gradient-to-b from-[#EAE0CF] to-white min-h-screen relative overflow-hidden flex flex-col justify-center">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      className="pt-24 pb-32 bg-gradient-to-b from-[#EAE0CF] to-white min-h-screen relative overflow-hidden flex flex-col justify-center"
+    >
       {" "}
       {/* Premium Texture */}{" "}
       <div
@@ -204,6 +209,6 @@ export default function Estimator() {
           </div>{" "}
         </motion.div>{" "}
       </div>{" "}
-    </div>
+    </motion.div>
   );
 }

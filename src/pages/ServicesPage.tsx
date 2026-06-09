@@ -61,7 +61,12 @@ const services = [
 ];
 export default function ServicesPage() {
   return (
-    <div className="pt-24 bg-gradient-to-b from-[#EAE0CF] to-white min-h-screen relative overflow-hidden">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      className="pt-24 bg-gradient-to-b from-[#EAE0CF] to-white min-h-screen relative overflow-hidden"
+    >
       {" "}
       {/* Subtle background luxury texturing */}{" "}
       <div
@@ -198,6 +203,6 @@ export default function ServicesPage() {
           ))}{" "}
         </div>{" "}
       </div>{" "}
-    </div>
+    </motion.div>
   );
 }

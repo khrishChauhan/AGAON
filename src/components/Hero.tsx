@@ -1,22 +1,25 @@
 import React, { useState } from "react";
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { Building2, MapPin, Layers, ArrowRight } from "lucide-react";
+
 export default function Hero() {
   const [city, setCity] = useState("");
   const [area, setArea] = useState("");
   const [floors, setFloors] = useState("");
+
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], ["0px", "60px"]);
+
   return (
     <section className="relative min-h-screen pt-24 pb-12 overflow-hidden bg-[#EAE0CF] flex items-center">
-      {" "}
-      <div className="absolute top-0 right-0 w-full lg:w-1/2 h-1/2 lg:h-full z-0 lg:block hidden">
-        {" "}
+      <motion.div style={{ y }} className="absolute top-0 right-0 w-full lg:w-1/2 h-[120%] -mt-[10%] lg:h-[120%] z-0 lg:block hidden">
         <img
           src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80"
           alt="Luxury Architecture"
           referrerPolicy="no-referrer"
           className="w-full h-full object-cover grayscale-[20%]"
-        />{" "}
-      </div>{" "}
+        />
+      </motion.div>
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center pt-12 lg:pt-0">
         {" "}
         {/* Left Content */}{" "}

@@ -53,45 +53,47 @@ export default function FAQ() {
           <div className="space-y-0 border-t border-[#111844]/10">
             {" "}
             {faqs.map((faq, idx) => (
-              <div key={idx} className="border-b border-[#111844]/10">
-                {" "}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.08, ease: "easeOut" }}
+                key={idx}
+                className="border-b border-[#111844]/10"
+              >
                 <button
                   onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
                   className="w-full flex items-center justify-between py-8 text-left group"
                 >
-                  {" "}
                   <span
                     className={`font-display text-xl transition-colors ${openIdx === idx ? "text-[#4B5694]" : "text-[#111844] group-hover:text-[#4B5694]"}`}
                   >
                     {faq.q}
-                  </span>{" "}
+                  </span>
                   <span className="ml-8 text-[#111844] group-hover:text-[#4B5694] transition-colors">
-                    {" "}
                     {openIdx === idx ? (
                       <Minus className="w-5 h-5" strokeWidth={1.5} />
                     ) : (
                       <Plus className="w-5 h-5" strokeWidth={1.5} />
-                    )}{" "}
-                  </span>{" "}
-                </button>{" "}
+                    )}
+                  </span>
+                </button>
                 <AnimatePresence>
-                  {" "}
                   {openIdx === idx && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
                       className="overflow-hidden"
                     >
-                      {" "}
                       <p className="pb-8 pr-12 text-[#7288AE]/70 text-sm font-light leading-relaxed">
-                        {" "}
-                        {faq.a}{" "}
-                      </p>{" "}
+                        {faq.a}
+                      </p>
                     </motion.div>
-                  )}{" "}
-                </AnimatePresence>{" "}
-              </div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             ))}{" "}
           </div>{" "}
         </div>{" "}
