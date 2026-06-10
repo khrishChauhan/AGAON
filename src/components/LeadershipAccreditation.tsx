@@ -87,6 +87,7 @@ export default function LeadershipAccreditation() {
                 <img
                   src={executive.image}
                   alt={executive.name}
+                  loading="lazy"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
                 />{" "}

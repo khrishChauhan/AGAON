@@ -7,8 +7,8 @@ export default function VRCta() {
     target: containerRef,
     offset: ["start end", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["-40px", "40px"]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.05, 1.1]);
+  const y = useTransform(scrollYProgress, [0, 1], ["-20px", "20px"]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.02, 1.05]);
   return (
     <section
       ref={containerRef}
@@ -19,8 +19,9 @@ export default function VRCta() {
       <motion.div style={{ y, scale }} className="absolute inset-[-10%] z-0">
         {" "}
         <img
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2400"
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1600"
           alt="Luxury Modern Residence Evening VR Visualization"
+          loading="lazy"
           referrerPolicy="no-referrer"
           className="w-full h-full object-cover"
         />{" "}
@@ -38,7 +39,7 @@ export default function VRCta() {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl flex items-center justify-center shadow-[0_0_40px_rgba(255,107,44,0.15)] mb-8"
+          className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center shadow-[0_0_20px_rgba(255,107,44,0.1)] mb-8"
         >
           {" "}
           <Glasses className="w-8 h-8 text-[#4B5694]" strokeWidth={1.5} />{" "}

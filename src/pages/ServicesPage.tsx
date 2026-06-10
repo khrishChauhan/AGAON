@@ -139,6 +139,7 @@ export default function ServicesPage() {
                     <img
                       src={service.image}
                       alt={service.title}
+                      loading="lazy"
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-105"
                     />{" "}

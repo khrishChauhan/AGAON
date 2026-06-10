@@ -120,6 +120,7 @@ export default function Testimonials() {
                   <img
                     src={testimonials[currentIndex].image}
                     alt={testimonials[currentIndex].name}
+                    loading="lazy"
                     referrerPolicy="no-referrer"
                     className="w-full h-full rounded-full object-cover"
                   />{" "}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight } from "lucide-react";
 const portfolioData = [
@@ -66,10 +66,11 @@ const portfolioData = [
 const filters = ["All", "Residential", "Commercial", "Institutional"];
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState("All");
-  const filteredProjects =
-    activeFilter === "All"
+  const filteredProjects = useMemo(() => {
+    return activeFilter === "All"
       ? portfolioData
       : portfolioData.filter((p) => p.category === activeFilter);
+  }, [activeFilter]);
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -137,9 +138,11 @@ export default function Portfolio() {
                   <img
                     src={project.image}
                     alt={project.name}
+                    loading="lazy"
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1.5s] ease-out"
-                  />{" "}
+                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-[1s] ease-out"
+                  />
+                  <div className="absolute inset-0 bg-[#111844] opacity-10 group-hover:opacity-0 transition-opacity duration-700 pointer-events-none" />{" "}
                 </div>{" "}
                 {/* Details */}{" "}
                 <div className="flex flex-col flex-grow">

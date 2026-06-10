@@ -65,21 +65,23 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: service.delay }}
-              key={idx}
+              key={service.title}
               className={`flex flex-col ${idx % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 lg:gap-24 items-center`}
             >
               {" "}
               {/* Image Block */}{" "}
-              <div className="w-full lg:w-1/2 overflow-hidden bg-[#111844] relative">
+              <div className="w-full lg:w-1/2 overflow-hidden bg-[#111844] relative group">
                 {" "}
                 <div className="aspect-[4/5] overflow-hidden">
                   {" "}
                   <img
                     src={service.image}
                     alt={service.title}
+                    loading="lazy"
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover grayscale-[30%] hover:grayscale-0 hover:scale-105 transition-all duration-1000 ease-out"
-                  />{" "}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-[1s]"
+                  />
+                  <div className="absolute inset-0 bg-[#111844] opacity-10 group-hover:opacity-0 transition-opacity duration-700 pointer-events-none" />{" "}
                 </div>{" "}
               </div>{" "}
               {/* Text Content */}{" "}

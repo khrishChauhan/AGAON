@@ -35,7 +35,7 @@ export const PROJECTS: Project[] = [
     longDescription:
       "The Horizon Tower represents a monument to corporate ambition. Formed from a dual-helical steel exoskeleton and core concrete active structural column, it rises 68 storeys above the NCR skyline. Engineered to resist severe seismic activity and wind-shear, the tower integrated state-of-the-art tuned mass dampers near its crown. Agaon implemented Level 5D Building Information Modeling (BIM) to coordinate over 120,000 architectural elements simultaneously, ensuring a flawless zero-collision installation pipeline.",
     image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80",
     location: "NCR Financial District, India",
     size: "1,450,000 Sq. Ft.",
     value: "₹1,240 Cr",
@@ -70,7 +70,7 @@ export const PROJECTS: Project[] = [
     longDescription:
       "An acoustic and visual masterpiece of luxury architecture, Aura Coastal Preserve seamlessly merges with the untamed coastal profile. Built with raw, unpainted post-stressed concrete structures and fully exposed architectural framing, each villa floats effortlessly over private seawater tier pools. The primary challenge was the marine environment. Agaon formulated and utilized specialized volcanic-ash marine-grade concrete with custom corrosion-resistant epoxy coated steel reinforcement to protect the long-term structural integrity against high humidity and salt atmospheres.",
     image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80",
     location: "Coastal Alibaug, Maharashtra",
     size: "180,000 Sq. Ft. (Combined)",
     value: "₹380 Cr",
@@ -111,7 +111,7 @@ export const PROJECTS: Project[] = [
     longDescription:
       "Specially commissioned to house critical global server grids and state-of-the-art research laboratories, Cyberflow Nexus represents the pinnacle of technology facility engineering. Featuring deep subterranean massive equipment halls, the buildings are structured to mitigate all external ambient vibrations. Specialized isolated inertia-block raft slabs were poured with rubberised polymer membranes. Structural systems integrate heavy steel truss elements with clear spans up to 48 meters, allowing endless server configurations.",
     image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80",
     location: "Whitefield Silicon Corridor, Bangalore",
     size: "2,100,000 Sq. Ft.",
     value: "₹980 Cr",
@@ -146,7 +146,7 @@ export const PROJECTS: Project[] = [
     longDescription:
       "Navigating highly unstable estuarine mud flats and violent tidal ranges, the Saraswati Estuary Bridge is a masterpiece of modern civil infrastructure. Over 320 pre-cast segmental girders were manufactured off-site in controlled conditions and launched surgically using a massive specialized overhead launching gantry. Each pier is integrated with localized fiber-optic strain sensory nodes, delivering real-time concrete stress, micro-fissure, and deflection analytics directly to the state traffic monitoring system.",
     image:
-      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=80",
     location: "Coastal Highway Expansion, Goa/Maharashtra",
     size: "1.2 Kilometer Linear Span",
     value: "₹640 Cr",

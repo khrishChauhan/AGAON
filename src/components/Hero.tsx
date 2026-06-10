@@ -8,15 +8,17 @@ export default function Hero() {
   const [floors, setFloors] = useState("");
 
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ["0px", "60px"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0px", "30px"]);
 
   return (
     <section className="relative min-h-screen pt-24 pb-12 overflow-hidden bg-[#EAE0CF] flex items-center">
       <motion.div style={{ y }} className="absolute top-0 right-0 w-full lg:w-1/2 h-[120%] -mt-[10%] lg:h-[120%] z-0 lg:block hidden">
         <img
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80"
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
           alt="Luxury Architecture"
           referrerPolicy="no-referrer"
+          loading="eager"
+          fetchPriority="high"
           className="w-full h-full object-cover grayscale-[20%]"
         />
       </motion.div>

@@ -79,6 +79,7 @@ export default function About() {
                 <img
                   src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80&w=1200"
                   alt="Modern Premium Luxury Residence Architectural Detailing"
+                  loading="lazy"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-105"
                 />{" "}

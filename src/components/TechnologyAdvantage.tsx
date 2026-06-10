@@ -115,6 +115,7 @@ export default function TechnologyAdvantage() {
               <img
                 src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80"
                 alt="Construction Site Engineering"
+                loading="lazy"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transform scale-105 group-hover/img:scale-100 transition-transform duration-[2s] ease-out"
               />{" "}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Project } from "../types";
 import { PROJECTS } from "../data";
 import { motion, AnimatePresence } from "motion/react";
@@ -6,17 +6,20 @@ import { ArrowRight, X } from "lucide-react";
 export default function ProjectShowcase() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [activeProject, setActiveProject] = useState<Project | null>(null);
-  const categories = [
+  
+  const categories = useMemo(() => [
     "All",
     "Commercial",
     "Residential",
     "Infrastructure",
     "Industrial",
-  ];
-  const filteredProjects =
-    selectedCategory === "All"
+  ], []);
+
+  const filteredProjects = useMemo(() => {
+    return selectedCategory === "All"
       ? PROJECTS
       : PROJECTS.filter((p) => p.category === selectedCategory);
+  }, [selectedCategory]);
   return (
     <section
       id="projects"
@@ -84,8 +87,9 @@ export default function ProjectShowcase() {
                   <img
                     src={project.image}
                     alt={project.name}
+                    loading="lazy"
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-[1s] ease-out group-hover:scale-[1.03]"
                   />{" "}
                   {/* Subtle Accent overlay */}{" "}
                   <div className="absolute inset-0 bg-[#111844]/10 transition-colors group-hover:bg-transparent" />{" "}
@@ -178,8 +182,9 @@ export default function ProjectShowcase() {
                 <img
                   src={activeProject.image}
                   alt={activeProject.name}
+                  loading="lazy"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale-[20%]"
+                  className="w-full h-full object-cover"
                 />{" "}
               </div>{" "}
               <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
