@@ -44,7 +44,7 @@ export default function Services() {
               {" "}
               Sectors of Expertise.{" "}
             </h2>{" "}
-            <p className="text-[#7288AE]/70 font-sans text-lg font-light leading-relaxed">
+            <p className="text-[#4B5694] font-sans text-lg font-light leading-relaxed">
               {" "}
               We bring software-level precision to physical structures. Our
               divisions operate with extreme accountability across three core
@@ -95,7 +95,7 @@ export default function Services() {
                   {" "}
                   {service.title}{" "}
                 </h3>{" "}
-                <p className="text-[#7288AE]/70 text-base lg:text-lg font-light leading-relaxed mb-10 max-w-md">
+                <p className="text-[#4B5694] text-base lg:text-lg font-light leading-relaxed mb-10 max-w-md">
                   {" "}
                   {service.description}{" "}
                 </p>{" "}

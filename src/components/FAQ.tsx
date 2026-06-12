@@ -41,7 +41,7 @@ export default function FAQ() {
             {" "}
             Clarity in construction.{" "}
           </h2>{" "}
-          <p className="text-[#7288AE]/60 font-sans text-sm font-light leading-relaxed mb-8 max-w-sm">
+          <p className="text-[#4B5694] font-sans text-sm font-light leading-relaxed mb-8 max-w-sm">
             {" "}
             Clear answers to help you make informed decisions about your
             construction journey.{" "}
@@ -87,7 +87,7 @@ export default function FAQ() {
                       transition={{ duration: 0.3, ease: "easeOut" }}
                       className="overflow-hidden"
                     >
-                      <p className="pb-8 pr-12 text-[#7288AE]/70 text-sm font-light leading-relaxed">
+                      <p className="pb-8 pr-12 text-[#4B5694] text-sm font-light leading-relaxed">
                         {faq.a}
                       </p>
                     </motion.div>

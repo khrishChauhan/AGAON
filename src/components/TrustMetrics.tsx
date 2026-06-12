@@ -28,7 +28,7 @@ export default function TrustMetrics() {
                 {" "}
                 {metric.value}{" "}
               </span>{" "}
-              <span className="font-sans text-sm text-[#7288AE]/50 uppercase tracking-widest font-medium">
+              <span className="font-sans text-sm text-[#4B5694] uppercase tracking-widest font-medium">
                 {" "}
                 {metric.label}{" "}
               </span>{" "}

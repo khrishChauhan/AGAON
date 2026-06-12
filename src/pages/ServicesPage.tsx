@@ -97,7 +97,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-            className="font-display text-5xl md:text-7xl font-extrabold tracking-tight text-[#111844] leading-[1.1] mb-10"
+            className="font-display text-[clamp(2.5rem,8vw,4.5rem)] font-extrabold tracking-tight text-[#111844] leading-[1.1] mb-10"
           >
             {" "}
             Our Services{" "}
@@ -106,7 +106,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="font-sans text-xl md:text-2xl text-[#7288AE]/80 font-light leading-relaxed max-w-3xl"
+            className="font-sans text-xl md:text-2xl text-[#4B5694] font-light leading-relaxed max-w-3xl"
           >
             {" "}
             Enterprise-grade execution tailored for your specific project needs.
@@ -162,7 +162,7 @@ export default function ServicesPage() {
                     {service.number}
                   </span>{" "}
                   <div className="w-8 h-[1px] bg-[#111844]/15" />{" "}
-                  <span className="font-sans text-[#7288AE]/50 text-sm font-bold uppercase tracking-wider">
+                  <span className="font-sans text-[#4B5694] text-sm font-bold uppercase tracking-wider">
                     SERVICE DIVISION
                   </span>{" "}
                 </div>{" "}
@@ -170,13 +170,13 @@ export default function ServicesPage() {
                   {" "}
                   {service.title}{" "}
                 </h2>{" "}
-                <p className="font-sans text-[#7288AE]/70 text-base md:text-lg font-light leading-relaxed">
+                <p className="font-sans text-[#4B5694] text-base md:text-lg font-light leading-relaxed">
                   {" "}
                   {service.description}{" "}
                 </p>{" "}
                 <div className="pt-8 border-t border-[#111844]/10">
                   {" "}
-                  <span className="font-sans text-sm text-[#7288AE]/50 tracking-widest uppercase font-bold block mb-4">
+                  <span className="font-sans text-sm text-[#4B5694] tracking-widest uppercase font-bold block mb-4">
                     Core Standards
                   </span>{" "}
                   <ul className="space-y-3">

@@ -44,7 +44,7 @@ export default function Contact() {
             {" "}
             Get In Touch{" "}
           </span>{" "}
-          <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tight text-[#111844]">
+          <h1 className="font-display text-[clamp(2.5rem,8vw,4.5rem)] font-extrabold tracking-tight text-[#111844] leading-[1.1]">
             {" "}
             Let's Build Something Great.{" "}
           </h1>{" "}
@@ -59,25 +59,25 @@ export default function Contact() {
               {contactMethods.map((method, idx) => (
                 <div
                   key={idx}
-                  className="group relative bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(7,21,46,0.12)] transition-all duration-500 transform hover:-translate-y-2 flex items-start space-x-6 border border-slate-100 overflow-hidden"
+                  className="group relative bg-white rounded-3xl p-6 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(7,21,46,0.12)] transition-all duration-500 transform hover:-translate-y-2 flex items-start space-x-4 sm:space-x-6 border border-slate-100 overflow-hidden"
                 >
                   {" "}
                   {/* Subtle accent line on hover */}{" "}
                   <div className="absolute top-0 left-0 w-1 h-full bg-[#4B5694] transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />{" "}
-                  <div className="w-16 h-16 bg-[#111844] rounded-2xl flex items-center justify-center shrink-0 shadow-inner group-hover:bg-[#4B5694] transition-colors duration-500">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#111844] rounded-2xl flex items-center justify-center shrink-0 shadow-inner group-hover:bg-[#4B5694] transition-colors duration-500">
                     {" "}
                     <method.icon
-                      className="w-7 h-7 text-white"
+                      className="w-5 h-5 sm:w-7 sm:h-7 text-white"
                       strokeWidth={1.5}
                     />{" "}
                   </div>{" "}
-                  <div className="pt-1.5">
+                  <div className="pt-1.5 min-w-0 w-full">
                     {" "}
-                    <h4 className="font-sans font-bold text-sm tracking-widest text-[#7288AE]/50 uppercase mb-2 group-hover:text-[#4B5694] transition-colors duration-300">
+                    <h4 className="font-sans font-bold text-sm tracking-widest text-[#4B5694] uppercase mb-2 group-hover:text-[#111844] transition-colors duration-300">
                       {" "}
                       {method.title}{" "}
                     </h4>{" "}
-                    <p className="font-display text-xl font-medium text-[#111844] leading-relaxed">
+                    <p className="font-display text-lg md:text-xl font-medium text-[#111844] leading-relaxed break-words break-all sm:break-words">
                       {" "}
                       {method.info}{" "}
                     </p>{" "}
@@ -139,7 +139,7 @@ export default function Contact() {
                     {" "}
                     <label
                       htmlFor="fullName"
-                      className="font-sans text-sm font-semibold text-slate-500 uppercase tracking-wider ml-1"
+                      className="font-sans text-sm font-semibold text-[#4B5694] uppercase tracking-wider ml-1"
                     >
                       {" "}
                       Full Name{" "}
@@ -159,7 +159,7 @@ export default function Contact() {
                     {" "}
                     <label
                       htmlFor="phone"
-                      className="font-sans text-sm font-semibold text-slate-500 uppercase tracking-wider ml-1"
+                      className="font-sans text-sm font-semibold text-[#4B5694] uppercase tracking-wider ml-1"
                     >
                       {" "}
                       Phone Number{" "}
@@ -180,7 +180,7 @@ export default function Contact() {
                   {" "}
                   <label
                     htmlFor="email"
-                    className="font-sans text-sm font-semibold text-slate-500 uppercase tracking-wider ml-1"
+                    className="font-sans text-sm font-semibold text-[#4B5694] uppercase tracking-wider ml-1"
                   >
                     {" "}
                     Email Address{" "}
@@ -200,7 +200,7 @@ export default function Contact() {
                   {" "}
                   <label
                     htmlFor="inquiryType"
-                    className="font-sans text-sm font-semibold text-slate-500 uppercase tracking-wider ml-1"
+                    className="font-sans text-sm font-semibold text-[#4B5694] uppercase tracking-wider ml-1"
                   >
                     {" "}
                     Project Type{" "}
@@ -223,7 +223,7 @@ export default function Contact() {
                     <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none">
                       {" "}
                       <svg
-                        className="w-4 h-4 text-slate-400"
+                        className="w-4 h-4 text-[#4B5694]"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -243,7 +243,7 @@ export default function Contact() {
                   {" "}
                   <label
                     htmlFor="message"
-                    className="font-sans text-sm font-semibold text-slate-500 uppercase tracking-wider ml-1"
+                    className="font-sans text-sm font-semibold text-[#4B5694] uppercase tracking-wider ml-1"
                   >
                     {" "}
                     Message{" "}

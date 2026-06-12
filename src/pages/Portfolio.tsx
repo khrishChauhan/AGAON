@@ -82,7 +82,7 @@ export default function Portfolio() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-24">
         {" "}
         {/* Header */}{" "}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-8">
           {" "}
           <div className="max-w-2xl">
             {" "}
@@ -90,22 +90,22 @@ export default function Portfolio() {
               {" "}
               Our Legacy{" "}
             </span>{" "}
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold text-[#111844] tracking-tight leading-[1.05]">
+            <h1 className="font-display text-[clamp(2.5rem,10vw,4.5rem)] font-extrabold text-[#111844] tracking-tight leading-[1.05]">
               {" "}
               Execution
               <br />{" "}
-              <span className="font-extrabold font-medium text-[#7288AE]/50">
+              <span className="font-extrabold font-medium text-[#4B5694]">
                 Portfolio.
               </span>{" "}
             </h1>{" "}
           </div>{" "}
-          <div className="flex flex-wrap gap-x-8 gap-y-4">
+          <div className="flex overflow-x-auto w-full md:w-auto gap-x-6 gap-y-4 pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {" "}
             {filters.map((f) => (
               <button
                 key={f}
                 onClick={() => setActiveFilter(f)}
-                className={`text-sm uppercase font-bold tracking-widest pb-1 border-b transition-all duration-300 cursor-pointer ${activeFilter === f ? "border-[#111844] text-[#111844]" : "border-transparent text-[#7288AE]/40 hover:text-[#7288AE]/70"}`}
+                className={`text-sm whitespace-nowrap shrink-0 uppercase font-bold tracking-widest pb-1 border-b transition-all duration-300 cursor-pointer ${activeFilter === f ? "border-[#111844] text-[#111844]" : "border-transparent text-[#7288AE] hover:text-[#111844]"}`}
               >
                 {" "}
                 {f}{" "}
@@ -153,7 +153,7 @@ export default function Portfolio() {
                       {" "}
                       {project.category}{" "}
                     </span>{" "}
-                    <span className="font-sans text-sm uppercase tracking-widest text-[#7288AE]/50">
+                    <span className="font-sans text-sm uppercase tracking-widest text-[#4B5694]">
                       {" "}
                       {project.location}{" "}
                     </span>{" "}
@@ -165,7 +165,7 @@ export default function Portfolio() {
                     {" "}
                     <div>
                       {" "}
-                      <span className="block font-sans text-sm text-[#7288AE]/50 tracking-widest uppercase mb-1">
+                      <span className="block font-sans text-sm text-[#4B5694] tracking-widest uppercase mb-1">
                         Scale
                       </span>{" "}
                       <span className="block font-display text-[#111844]">

@@ -58,7 +58,7 @@ export default function Header() {
             </div>
             <span className={`text-xl font-display font-semibold tracking-widest uppercase transition-colors duration-300 select-none ${!isScrolled ? 'text-white' : 'text-[#111844]'}`}>
               Agaon
-              <span className={`font-sans font-light text-sm tracking-widest ml-2 ${!isScrolled ? 'text-[#EAE0CF]/70' : 'text-[#7288AE]/60'}`}>
+              <span className={`font-sans font-light text-sm tracking-widest ml-2 hidden sm:inline ${!isScrolled ? 'text-[#EAE0CF]/70' : 'text-[#4B5694]'}`}>
                 CONSTRUCTION
               </span>
             </span>

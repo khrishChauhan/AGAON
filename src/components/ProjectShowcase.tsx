@@ -29,7 +29,7 @@ export default function ProjectShowcase() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full mb-24">
         {" "}
         {/* Section Header */}{" "}
-        <div className="flex flex-col md:flex-row justify-between items-end gap-12">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
           {" "}
           <div className="max-w-2xl">
             {" "}
@@ -37,7 +37,7 @@ export default function ProjectShowcase() {
               {" "}
               Our Legacy{" "}
             </span>{" "}
-            <h2 className="font-display text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05]">
+            <h2 className="font-display text-[clamp(2.5rem,8vw,4.5rem)] font-extrabold tracking-tight text-white leading-[1.05]">
               {" "}
               Generational
               <br />{" "}
@@ -47,13 +47,13 @@ export default function ProjectShowcase() {
             </h2>{" "}
           </div>{" "}
           {/* Filtering tabs */}{" "}
-          <div className="flex flex-wrap gap-x-8 gap-y-4">
+          <div className="flex overflow-x-auto w-full md:w-auto gap-x-6 gap-y-4 pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {" "}
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`text-sm uppercase font-bold tracking-widest pb-1 border-b border-white transition-all duration-300 cursor-pointer ${selectedCategory === cat ? "text-white border-white" : "text-white/40 border-transparent hover:text-white/70"}`}
+                className={`text-sm whitespace-nowrap shrink-0 uppercase font-bold tracking-widest pb-1 border-b border-white transition-all duration-300 cursor-pointer ${selectedCategory === cat ? "text-white border-white" : "text-white/40 border-transparent hover:text-white/70"}`}
               >
                 {" "}
                 {cat}{" "}
@@ -112,7 +112,7 @@ export default function ProjectShowcase() {
                   {" "}
                   {project.description}{" "}
                 </p>{" "}
-                <div className="flex space-x-12 pt-8 border-t border-white/20 mb-10">
+                <div className="flex flex-wrap gap-x-6 gap-y-4 md:space-x-12 pt-8 border-t border-white/20 mb-10">
                   {" "}
                   <div>
                     {" "}

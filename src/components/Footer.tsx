@@ -14,7 +14,7 @@ export default function Footer() {
         {/* Top Massive Typography */}{" "}
         <div className="mb-24 md:mb-32">
           {" "}
-          <h2 className="font-display text-5xl md:text-[7rem] lg:text-[10rem] font-extrabold text-white tracking-tighter leading-none mb-6">
+          <h2 className="font-display text-[clamp(4.5rem,15vw,10rem)] font-extrabold text-white tracking-tighter leading-none mb-6">
             {" "}
             AGAON{" "}
           </h2>{" "}

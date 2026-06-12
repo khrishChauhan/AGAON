@@ -87,7 +87,7 @@ export default function Estimator() {
                 {/* City Selection */}{" "}
                 <div className="flex flex-col space-y-2">
                   {" "}
-                  <label className="font-sans text-sm uppercase font-bold tracking-wider text-[#7288AE]/70">
+                  <label className="font-sans text-sm uppercase font-bold tracking-wider text-[#4B5694]">
                     {" "}
                     City of Construction{" "}
                   </label>{" "}
@@ -101,7 +101,7 @@ export default function Estimator() {
                 {/* Plot Area */}{" "}
                 <div className="flex flex-col space-y-2">
                   {" "}
-                  <label className="font-sans text-sm uppercase font-bold tracking-wider text-[#7288AE]/70">
+                  <label className="font-sans text-sm uppercase font-bold tracking-wider text-[#4B5694]">
                     {" "}
                     Plot Area (Sq. Ft.){" "}
                   </label>{" "}
@@ -110,13 +110,13 @@ export default function Estimator() {
                     value={area}
                     onChange={(e) => setArea(e.target.value)}
                     placeholder="e.g. 1500"
-                    className="w-full bg-transparent border-b-2 border-[#111844]/10 pb-3 pt-2 text-[#111844] font-display text-xl font-medium placeholder:text-[#7288AE]/20 focus:outline-none focus:border-[#4B5694] transition-colors"
+                    className="w-full bg-transparent border-b-2 border-[#111844]/10 pb-3 pt-2 text-[#111844] font-display text-xl font-medium placeholder:text-[#4B5694]/60 focus:outline-none focus:border-[#4B5694] transition-colors"
                   />{" "}
                 </div>{" "}
                 {/* Floors */}{" "}
                 <div className="flex flex-col space-y-2">
                   {" "}
-                  <label className="font-sans text-sm uppercase font-bold tracking-wider text-[#7288AE]/70">
+                  <label className="font-sans text-sm uppercase font-bold tracking-wider text-[#4B5694]">
                     {" "}
                     Number of Floors{" "}
                   </label>{" "}
@@ -137,7 +137,7 @@ export default function Estimator() {
                 {/* Finish Quality */}{" "}
                 <div className="flex flex-col space-y-2">
                   {" "}
-                  <label className="font-sans text-sm uppercase font-bold tracking-wider text-[#7288AE]/70">
+                  <label className="font-sans text-sm uppercase font-bold tracking-wider text-[#4B5694]">
                     {" "}
                     Finish Quality{" "}
                   </label>{" "}

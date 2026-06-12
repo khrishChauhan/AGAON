@@ -38,7 +38,7 @@ export default function About() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-            className="font-display text-5xl md:text-7xl font-extrabold tracking-tight text-[#111844] leading-[1.1] mb-10"
+            className="font-display text-[clamp(2.5rem,8vw,4.5rem)] font-extrabold tracking-tight text-[#111844] leading-[1.1] mb-10"
           >
             {" "}
             Structuring the
@@ -51,7 +51,7 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="font-sans text-xl md:text-2xl text-[#7288AE]/80 font-light leading-relaxed max-w-2xl"
+            className="font-sans text-xl md:text-2xl text-[#4B5694] font-light leading-relaxed max-w-2xl"
           >
             {" "}
             Agaon Construction is on a mission to bring transparency,
@@ -109,7 +109,7 @@ export default function About() {
                 {" "}
                 The Vision{" "}
               </h2>{" "}
-              <div className="space-y-6 font-sans text-base md:text-lg text-[#7288AE]/70 font-light leading-relaxed">
+              <div className="space-y-6 font-sans text-base md:text-lg text-[#4B5694] font-light leading-relaxed">
                 {" "}
                 <p>
                   {" "}
@@ -152,7 +152,7 @@ export default function About() {
                     100%{" "}
                   </div>{" "}
                   <div className="w-10 h-[2px] bg-[#4B5694]" />{" "}
-                  <span className="font-sans text-sm font-bold text-[#7288AE]/50 uppercase tracking-wider block">
+                  <span className="font-sans text-sm font-bold text-[#4B5694] uppercase tracking-wider block">
                     {" "}
                     Transparent Pricing{" "}
                   </span>{" "}
@@ -164,7 +164,7 @@ export default function About() {
                     0{" "}
                   </div>{" "}
                   <div className="w-10 h-[2px] bg-[#111844]/20" />{" "}
-                  <span className="font-sans text-sm font-bold text-[#7288AE]/50 uppercase tracking-wider block">
+                  <span className="font-sans text-sm font-bold text-[#4B5694] uppercase tracking-wider block">
                     {" "}
                     Budget Overruns{" "}
                   </span>{" "}

@@ -44,7 +44,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-display text-5xl md:text-7xl lg:text-[5rem] font-extrabold tracking-tight leading-[1.05] text-[#111844]"
+            className="font-display text-[clamp(2.5rem,8vw,5rem)] font-extrabold tracking-tight leading-[1.05] text-[#111844]"
           >
             {" "}
             Engineering Your Vision.
@@ -58,7 +58,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-[#7288AE]/70 max-w-lg text-lg font-sans font-light leading-relaxed"
+            className="text-[#4B5694] max-w-lg text-lg font-sans font-light leading-relaxed"
           >
             {" "}
             Experience transparent pricing, zero delays, and real-time project
@@ -100,7 +100,7 @@ export default function Hero() {
               <h3 className="font-display text-3xl font-bold text-[#111844] mb-3">
                 Cost Estimator
               </h3>{" "}
-              <p className="text-[#7288AE]/60 text-sm font-sans">
+              <p className="text-[#4B5694] text-sm font-sans">
                 Get an instant structural and finish estimate.
               </p>{" "}
             </div>{" "}
@@ -143,7 +143,7 @@ export default function Hero() {
                     placeholder="e.g. 2400"
                     value={area}
                     onChange={(e) => setArea(e.target.value)}
-                    className="w-full bg-transparent border-b border-[#111844]/20 py-3 pl-8 pr-4 text-[#111844] focus:outline-none focus:border-[#4B5694] transition-colors rounded-none placeholder:text-[#7288AE]/30"
+                    className="w-full bg-transparent border-b border-[#111844]/20 py-3 pl-8 pr-4 text-[#111844] focus:outline-none focus:border-[#4B5694] transition-colors rounded-none placeholder:text-[#4B5694]/50"
                   />{" "}
                 </div>{" "}
               </div>{" "}

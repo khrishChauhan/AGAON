@@ -1,179 +1,256 @@
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
-import { Quote, ArrowRight, ArrowLeft } from "lucide-react";
+import React, { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
+import { ChevronRight, ChevronLeft, Quote } from "lucide-react";
 
 const testimonials = [
   {
     name: "Anjali Desai",
-    role: "Director, Nexus Tech Park",
-    location: "Gurugram",
-    text: "The structural integrity and facade work done by Agaon for our tech park was exceptional. Their team handled everything from planning to final handover with complete professionalism.",
+    role: "Project Director",
+    location: "Mumbai",
+    text: "Working with Agaon transformed our ambitious vision into a tangible reality. Their BIM integration and collision-free pipeline saved us millions in potential rework.",
     image:
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200",
   },
   {
-    name: "Rahul Mehta",
-    role: "Homeowner",
-    location: "Mumbai",
-    text: "We wanted a premium home without the usual contractor headaches. Agaon delivered exactly what was promised, on time and within budget.",
+    name: "Vikram Mehta",
+    role: "Chief Architect",
+    location: "Bangalore",
+    text: "The precision Agaon brings to structural execution is unmatched in the subcontinent. They are true partners in navigating complex infrastructural challenges.",
     image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=200",
+      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200",
   },
   {
     name: "Priya Sharma",
-    role: "Villa Owner",
-    location: "Pune",
-    text: "The real-time project tracking gave us confidence throughout construction. We could monitor progress from anywhere.",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200",
-  },
-  {
-    name: "Vikram Khanna",
-    role: "Business Owner",
-    location: "Bengaluru",
-    text: "The transparency in pricing and execution was unlike anything we had experienced before in the construction industry.",
+    role: "Operations Head",
+    location: "NCR",
+    text: "From estuarine bridges to high-density server farms, Agaon’s versatility and commitment to zero-compromise safety standards make them our primary contractor.",
     image:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200",
   },
-  {
-    name: "Neha Patel",
-    role: "Managing Partner",
-    location: "Ahmedabad",
-    text: "Agaon’s attention to detail and commitment to sustainable building practices transformed our vision into an architectural masterpiece.",
-    image: 
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200",
-  },
-  {
-    name: "Arjun Singh",
-    role: "Estate Developer",
-    location: "Delhi",
-    text: "Working with Agaon felt less like hiring a contractor and more like partnering with true craftsmen. Their standard of excellence is unmatched.",
-    image: 
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
-  }
 ];
 
 export default function Testimonials() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  const scrollLeft = () => {
-    if (scrollRef.current) {
-      const cardWidth = scrollRef.current.children[0].clientWidth;
-      scrollRef.current.scrollBy({ left: -cardWidth - 32, behavior: "smooth" });
-    }
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
+  const next = () => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
+  const prev = () => {
+    setDirection(-1);
+    setCurrentIndex(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
+    );
   };
 
-  const scrollRight = () => {
-    if (scrollRef.current) {
-      const cardWidth = scrollRef.current.children[0].clientWidth;
-      scrollRef.current.scrollBy({ left: cardWidth + 32, behavior: "smooth" });
+  const sectionRef = useRef<HTMLElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [scrollRange, setScrollRange] = useState(0);
+
+  useEffect(() => {
+    const updateDimension = () => {
+      if (trackRef.current) {
+        const trackWidth = trackRef.current.scrollWidth;
+        const viewportWidth = window.innerWidth;
+        const distance = trackWidth - viewportWidth;
+        setScrollRange(Math.max(0, distance));
+        console.log({
+          trackWidth,
+          viewportWidth,
+          scrollRange: Math.max(0, distance),
+        });
+      }
+    };
+    
+    // Delay slightly to ensure fonts and layout settle
+    const timeout = setTimeout(updateDimension, 150);
+    
+    const observer = new ResizeObserver(updateDimension);
+    if (trackRef.current) {
+      observer.observe(trackRef.current);
     }
-  };
+    window.addEventListener("resize", updateDimension);
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener("resize", updateDimension);
+      observer.disconnect();
+    };
+  }, []);
+
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end end"] });
+  
+  const x = useTransform(scrollYProgress, (value) => -value * scrollRange);
 
   return (
-    <section className="py-24 md:py-32 bg-[#EAE0CF] relative overflow-hidden flex flex-col justify-center border-t border-[#111844]/5">
-      {/* Subtle Premium Background Texture */}
-      <div
-        className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(#111844 1px, transparent 1px), linear-gradient(90deg, #111844 1px, transparent 1px)`,
-          backgroundSize: "40px 40px",
-        }}
-      />
-      
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 w-full mb-12 lg:mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
-        <div>
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center space-x-3 mb-6"
-          >
-            <div className="w-8 h-[1px] bg-[#4B5694]" />
-            <span className="text-[#4B5694] text-sm font-bold uppercase tracking-widest">
-              Client Stories
-            </span>
+    <>
+      {/* DESKTOP HORIZONTAL SCROLL */}
+      <section 
+        ref={sectionRef} 
+        className="hidden md:block relative bg-[#EAE0CF]"
+        style={{ height: `calc(100vh + ${scrollRange}px)` }}
+      >
+        <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+          {/* Subtle Premium Background Texture */}
+          <div
+            className="absolute inset-0 z-0 pointer-events-none opacity-[0.02]"
+            style={{
+              backgroundImage: ` linear-gradient(#111844 1px, transparent 1px), linear-gradient(90deg, #111844 1px, transparent 1px) `,
+              backgroundSize: "30px 30px",
+            }}
+          />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/50 blur-[100px] pointer-events-none rounded-full" />
+          
+          <motion.div ref={trackRef} style={{ x }} className="relative z-10 flex shrink-0 flex-nowrap items-center pl-6 lg:pl-16 pr-12 lg:pr-24 w-max gap-8 lg:gap-16">
+            {/* Intro Section Header */}
+            <div className="w-[85vw] lg:w-[45vw] flex flex-col items-start justify-center shrink-0">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-8 h-[1px] bg-[#4B5694]" />
+                <span className="text-[#4B5694] text-sm font-bold uppercase tracking-widest">
+                  CLIENT STORIES
+                </span>
+              </div>
+              <h2 className="font-display text-5xl lg:text-7xl text-[#111844] font-extrabold tracking-tight">
+                What Our Clients Say
+              </h2>
+            </div>
+            
+            {/* Testimonials */}
+            {testimonials.map((testimonial, idx) => (
+              <div key={idx} className="w-[85vw] lg:w-[50vw] xl:w-[45vw] flex flex-col items-center text-center shrink-0">
+                 <div className="relative text-[#7288AE]/5 z-0 transform -translate-y-12 mb-[-80px]">
+                   <Quote className="w-40 h-40 fill-current" />
+                 </div>
+                 <h3 className="font-display text-2xl lg:text-4xl text-[#111844] font-medium leading-relaxed mb-12 px-4 lg:px-8">
+                   "{testimonial.text}"
+                 </h3>
+                 <div className="flex flex-col items-center">
+                   <div className="w-20 h-20 rounded-full p-1 border-2 border-[#111844]/10 mb-6 bg-white shadow-xl shadow-black/5">
+                     <img
+                       src={testimonial.image}
+                       alt={testimonial.name}
+                       loading="lazy"
+                       referrerPolicy="no-referrer"
+                       className="w-full h-full rounded-full object-cover"
+                     />
+                   </div>
+                   <span className="font-display text-xl text-[#111844] font-bold mb-1">
+                     {testimonial.name}
+                   </span>
+                   <span className="font-sans text-sm text-[#7288AE]/50 font-bold uppercase tracking-widest">
+                     {testimonial.role} <span className="mx-2 opacity-50">|</span> {testimonial.location}
+                   </span>
+                 </div>
+              </div>
+            ))}
           </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-4xl md:text-5xl lg:text-6xl text-[#111844] font-extrabold tracking-tight max-w-2xl"
-          >
-            Built on Trust &amp; Engineering Excellence
-          </motion.h2>
         </div>
+      </section>
 
-        <motion.div 
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex items-center space-x-4 shrink-0"
-        >
-          <button 
-            onClick={scrollLeft}
-            className="w-14 h-14 rounded-full border border-[#111844]/20 flex items-center justify-center text-[#111844] hover:bg-[#111844] hover:text-white transition-colors duration-300 group focus:outline-none"
-            aria-label="Previous Testimonials"
-          >
-            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-          </button>
-          <button 
-            onClick={scrollRight}
-            className="w-14 h-14 rounded-full border border-[#111844]/20 flex items-center justify-center text-[#111844] hover:bg-[#111844] hover:text-white transition-colors duration-300 group focus:outline-none"
-            aria-label="Next Testimonials"
-          >
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
-        </motion.div>
-      </div>
-
-      <div className="relative z-10 w-full pl-6 md:pl-12 xl:pl-[calc(50vw-650px)]">
-        <div 
-          ref={scrollRef}
-          className="flex overflow-x-auto gap-6 md:gap-8 pb-12 pr-6 md:pr-12 xl:pr-[calc(50vw-650px)] snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] scroll-smooth"
-        >
-          {testimonials.map((testimonial, idx) => (
+      {/* MOBILE VERTICAL CAROUSEL */}
+      <section className="md:hidden py-32 bg-gradient-to-b from-[#EAE0CF] to-white relative overflow-hidden flex flex-col justify-center">
+        {/* Subtle Premium Background Texture */}
+        <div
+          className="absolute inset-0 z-0 pointer-events-none opacity-[0.02]"
+          style={{
+            backgroundImage: ` linear-gradient(#111844 1px, transparent 1px), linear-gradient(90deg, #111844 1px, transparent 1px) `,
+            backgroundSize: "30px 30px",
+          }}
+        />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/50 blur-[100px] pointer-events-none rounded-full" />
+        <div className="max-w-4xl mx-auto px-6 relative z-10 w-full flex flex-col items-center text-center">
+          {/* Section Header */}
+          <div className="mb-16">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              key={idx}
-              className="relative isolate flex flex-col bg-white p-8 md:p-12 border border-[#111844]/5 w-[85vw] md:w-[450px] lg:w-[500px] shrink-0 snap-start shadow-[0_20px_50px_rgba(17,24,68,0.03)]"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="flex items-center justify-center space-x-3 mb-6"
             >
-              <Quote className="absolute top-10 right-10 w-16 h-16 text-[#111844]/5 -z-10" />
-              
-              <div className="flex-1">
-                <div className="mb-8 flex items-center space-x-1">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 text-[#4B5694] fill-current" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="font-display text-xl md:text-2xl text-[#111844] leading-relaxed mb-10 font-medium">"{testimonial.text}"</p>
-              </div>
-              
-              <div className="flex items-center space-x-4 mt-auto pt-6 border-t border-[#111844]/5">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.name} 
-                  loading="lazy"
-                  referrerPolicy="no-referrer"
-                  className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover grayscale-[20%] border border-[#111844]/10" 
-                />
-                <div className="flex flex-col">
-                  <span className="font-display text-base md:text-lg font-bold text-[#111844]">{testimonial.name}</span>
-                  <span className="font-sans text-[10px] md:text-xs tracking-widest uppercase text-[#111844]/50">{testimonial.role} <span className="mx-1">•</span> {testimonial.location}</span>
-                </div>
-              </div>
+              <div className="w-8 h-[1px] bg-[#4B5694]" />
+              <span className="text-[#4B5694] text-sm font-bold uppercase tracking-widest">
+                CLIENT STORIES
+              </span>
+              <div className="w-8 h-[1px] bg-[#4B5694]" />
             </motion.div>
-          ))}
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="font-display text-4xl text-[#111844] font-extrabold tracking-tight"
+            >
+              What Our Clients Say
+            </motion.h2>
+          </div>
+          {/* Testimonial Carousel */}
+          <div className="relative w-full min-h-[400px] flex flex-col items-center justify-center">
+            <div className="absolute top-0 text-[#7288AE]/5 z-0 transform -translate-y-12">
+              <Quote className="w-40 h-40 fill-current" />
+            </div>
+            <AnimatePresence mode="wait" custom={direction}>
+              <motion.div
+                key={currentIndex}
+                custom={direction}
+                initial={{ opacity: 0, x: direction * 40, filter: "blur(4px)" }}
+                animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                exit={{ opacity: 0, x: direction * -40, filter: "blur(4px)" }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                className="relative z-10 w-full flex flex-col items-center"
+              >
+                <h3 className="font-display text-2xl text-[#111844] font-medium leading-relaxed mb-12 max-w-3xl">
+                  "{testimonials[currentIndex].text}"
+                </h3>
+                <div className="flex flex-col items-center">
+                  <div className="w-20 h-20 rounded-full p-1 border-2 border-[#111844]/10 mb-6 bg-white shadow-xl shadow-black/5">
+                    <img
+                      src={testimonials[currentIndex].image}
+                      alt={testimonials[currentIndex].name}
+                      loading="lazy"
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full rounded-full object-cover"
+                    />
+                  </div>
+                  <span className="font-display text-xl text-[#111844] font-bold mb-1">
+                    {testimonials[currentIndex].name}
+                  </span>
+                  <span className="font-sans text-sm text-[#7288AE]/50 font-bold uppercase tracking-widest">
+                    {testimonials[currentIndex].role} <span className="mx-2 opacity-50">|</span> {testimonials[currentIndex].location}
+                  </span>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+          {/* Navigation Controls */}
+          <div className="flex items-center space-x-6 mt-16">
+            <button
+              onClick={prev}
+              className="w-12 h-12 rounded-full border border-[#111844]/20 flex items-center justify-center text-[#7288AE]/50 hover:bg-[#111844] hover:border-[#111844] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <ChevronLeft className="w-5 h-5 ml-[-2px]" />
+            </button>
+            <div className="flex space-x-2">
+              {testimonials.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    setDirection(idx > currentIndex ? 1 : -1);
+                    setCurrentIndex(idx);
+                  }}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${currentIndex === idx ? "bg-[#4B5694] w-6" : "bg-[#111844]/20 hover:bg-[#111844]/40"}`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+            <button
+              onClick={next}
+              className="w-12 h-12 rounded-full border border-[#111844]/20 flex items-center justify-center text-[#7288AE]/50 hover:bg-[#111844] hover:border-[#111844] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <ChevronRight className="w-5 h-5 mr-[-2px]" />
+            </button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
