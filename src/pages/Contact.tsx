@@ -42,7 +42,7 @@ export default function Contact() {
     setSubmitSuccess(false);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/info@agaonconstruction.com", {
+      const response = await fetch("https://formsubmit.co/ajax/agoanconstruction@gmail.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -197,7 +197,7 @@ export default function Contact() {
                 Send an Inquiry{" "}
               </h3>{" "}
               <form className="space-y-6" onSubmit={handleSubmit}>
-                {" "}
+                <input type="hidden" name="_subject" value="New Agaon Construction Inquiry" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {" "}
                   {/* Name Input */}{" "}
@@ -213,6 +213,7 @@ export default function Contact() {
                     <input
                       type="text"
                       id="fullName"
+                      name="Name"
                       required
                       onFocus={() => setFocusedInput("fullName")}
                       onBlur={() => setFocusedInput(null)}
@@ -235,6 +236,7 @@ export default function Contact() {
                     <input
                       type="tel"
                       id="phone"
+                      name="Phone"
                       required
                       onFocus={() => setFocusedInput("phone")}
                       onBlur={() => setFocusedInput(null)}
@@ -258,6 +260,7 @@ export default function Contact() {
                   <input
                     type="email"
                     id="email"
+                    name="Email"
                     required
                     onFocus={() => setFocusedInput("email")}
                     onBlur={() => setFocusedInput(null)}
@@ -281,11 +284,12 @@ export default function Contact() {
                     {" "}
                     <select
                       id="inquiryType"
+                      name="Project Type"
                       onFocus={() => setFocusedInput("inquiryType")}
                       onBlur={() => setFocusedInput(null)}
                       className="w-full h-[56px] bg-slate-50 rounded-xl pl-5 pr-12 font-sans text-sm text-[#111844] outline-none border border-transparent transition-all duration-300 focus:border-[#4B5694] focus:bg-white focus:shadow-[0_4px_20px_rgba(255,107,44,0.08)] appearance-none cursor-pointer"
-                      value={formData.inquiryType}
                       required
+                      value={formData.inquiryType}
                       onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })}
                     >
                       {" "}
@@ -325,6 +329,7 @@ export default function Contact() {
                   </label>{" "}
                   <textarea
                     id="message"
+                    name="Message"
                     rows={4}
                     required
                     onFocus={() => setFocusedInput("message")}
