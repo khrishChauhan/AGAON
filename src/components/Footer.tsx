@@ -151,8 +151,8 @@ export default function Footer() {
               </li>{" "}
               <li className="leading-relaxed">
                 {" "}
-                Boring Road,
-                <br /> Patna, Bihar 800001{" "}
+                Kankarbagh,
+                <br /> Patna, Bihar 800020{" "}
               </li>{" "}
               <li className="leading-relaxed mt-4">
                 {" "}

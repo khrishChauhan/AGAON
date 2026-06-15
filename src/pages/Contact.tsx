@@ -77,7 +77,7 @@ export default function Contact() {
     { title: "Email Us", info: "info@agaonconstruction.com", icon: Mail },
     {
       title: "Patna Regional Office",
-      info: "Boring Road, Patna, Bihar 800001",
+      info: "Kankarbagh, Patna, Bihar 800020",
       icon: MapPin,
     },
     {
