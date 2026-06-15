@@ -8,16 +8,82 @@ import {
   ArrowRight,
   DownloadCloud,
   FileText,
+  Clock,
 } from "lucide-react";
 export default function Contact() {
   const [focusedInput, setFocusedInput] = useState<string | null>(null);
+  const [formData, setFormData] = useState({
+    fullName: "",
+    phone: "",
+    email: "",
+    inquiryType: "",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.fullName || !formData.phone || !formData.inquiryType) {
+      setSubmitError("Please fill in all required fields.");
+      return;
+    }
+    
+    // Validate Indian mobile number
+    const phoneRegex = /^(\+91[\-\s]?)?[0]?(91)?[456789]\d{9}$/;
+    if (!phoneRegex.test(formData.phone)) {
+      setSubmitError("Please enter a valid Indian mobile number.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitError("");
+    setSubmitSuccess(false);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/info@agaonconstruction.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: "New Agaon Construction Inquiry",
+          Name: formData.fullName,
+          Phone: formData.phone,
+          "Project Type": formData.inquiryType,
+          Message: formData.message,
+          "Submitted At": new Date().toLocaleString(),
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success === "true" || result.success === true || response.ok) {
+        setSubmitSuccess(true);
+        setFormData({ fullName: "", phone: "", email: "", inquiryType: "", message: "" });
+      } else {
+        throw new Error(result.message || "Failed to submit form.");
+      }
+    } catch (err) {
+      console.error(err);
+      setSubmitError("Transmission failed. Please check your network connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const contactMethods = [
-    { title: "Direct Line", info: "+91 (0612) 250 1000", icon: Phone },
-    { title: "Email Us", info: "hello@agaconstruction.com", icon: Mail },
+    { title: "Direct Line", info: "+91 80519 11111", icon: Phone },
+    { title: "Email Us", info: "info@agaonconstruction.com", icon: Mail },
     {
       title: "Patna Regional Office",
-      info: "101, Agaon Tower, Boring Road, Patna, Bihar 800001",
+      info: "Boring Road, Patna, Bihar 800001",
       icon: MapPin,
+    },
+    {
+      title: "Business Hours",
+      info: "Mon-Sat, 9:00 AM – 7:00 PM",
+      icon: Clock,
     },
   ];
   return (
@@ -130,7 +196,7 @@ export default function Contact() {
                 {" "}
                 Send an Inquiry{" "}
               </h3>{" "}
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 {" "}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {" "}
@@ -152,6 +218,8 @@ export default function Contact() {
                       onBlur={() => setFocusedInput(null)}
                       className="w-full h-[56px] bg-slate-50 rounded-xl px-5 font-sans text-sm text-[#111844] outline-none border border-transparent transition-all duration-300 focus:border-[#4B5694] focus:bg-white focus:shadow-[0_4px_20px_rgba(255,107,44,0.08)]"
                       placeholder="John Doe"
+                      value={formData.fullName}
+                      onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                     />{" "}
                   </div>{" "}
                   {/* Phone Input */}{" "}
@@ -171,7 +239,9 @@ export default function Contact() {
                       onFocus={() => setFocusedInput("phone")}
                       onBlur={() => setFocusedInput(null)}
                       className="w-full h-[56px] bg-slate-50 rounded-xl px-5 font-sans text-sm text-[#111844] outline-none border border-transparent transition-all duration-300 focus:border-[#4B5694] focus:bg-white focus:shadow-[0_4px_20px_rgba(255,107,44,0.08)]"
-                      placeholder="+91 90000 00000"
+                      placeholder="+91 80519 11111"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     />{" "}
                   </div>{" "}
                 </div>{" "}
@@ -193,6 +263,8 @@ export default function Contact() {
                     onBlur={() => setFocusedInput(null)}
                     className="w-full h-[56px] bg-slate-50 rounded-xl px-5 font-sans text-sm text-[#111844] outline-none border border-transparent transition-all duration-300 focus:border-[#4B5694] focus:bg-white focus:shadow-[0_4px_20px_rgba(255,107,44,0.08)]"
                     placeholder="john@example.com"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />{" "}
                 </div>{" "}
                 {/* Project Type Input */}{" "}
@@ -212,6 +284,9 @@ export default function Contact() {
                       onFocus={() => setFocusedInput("inquiryType")}
                       onBlur={() => setFocusedInput(null)}
                       className="w-full h-[56px] bg-slate-50 rounded-xl pl-5 pr-12 font-sans text-sm text-[#111844] outline-none border border-transparent transition-all duration-300 focus:border-[#4B5694] focus:bg-white focus:shadow-[0_4px_20px_rgba(255,107,44,0.08)] appearance-none cursor-pointer"
+                      value={formData.inquiryType}
+                      required
+                      onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })}
                     >
                       {" "}
                       <option value="">Select an option</option>{" "}
@@ -256,17 +331,30 @@ export default function Contact() {
                     onBlur={() => setFocusedInput(null)}
                     className="w-full bg-slate-50 rounded-xl p-5 font-sans text-sm text-[#111844] outline-none border border-transparent transition-all duration-300 focus:border-[#4B5694] focus:bg-white focus:shadow-[0_4px_20px_rgba(255,107,44,0.08)] resize-none"
                     placeholder="Tell us about your project requirements..."
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   ></textarea>{" "}
                 </div>{" "}
                 {/* Submit Button */}{" "}
                 <div className="pt-6">
                   {" "}
+                  {submitSuccess && (
+                    <div className="mb-4 p-4 bg-emerald-50 text-emerald-600 rounded-xl text-sm font-sans">
+                      Thank you for contacting Agaon Construction. Our team will reach out shortly.
+                    </div>
+                  )}
+                  {submitError && (
+                    <div className="mb-4 p-4 bg-red-50 text-red-600 rounded-xl text-sm font-sans">
+                      {submitError}
+                    </div>
+                  )}
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-10 h-[56px] bg-[#111844] text-white rounded-xl font-sans font-bold text-sm tracking-wide flex items-center justify-center hover:bg-[#4B5694] transition-all duration-300 hover:shadow-[0_8px_25px_rgba(255,107,44,0.35)] transform hover:-translate-y-1 group"
+                    disabled={isSubmitting}
+                    className="w-full sm:w-auto px-10 h-[56px] bg-[#111844] text-white rounded-xl font-sans font-bold text-sm tracking-wide flex items-center justify-center hover:bg-[#4B5694] transition-all duration-300 hover:shadow-[0_8px_25px_rgba(255,107,44,0.35)] transform hover:-translate-y-1 group disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {" "}
-                    <span>Send Message</span>{" "}
+                    <span>{isSubmitting ? "Sending..." : "Send Message"}</span>{" "}
                     <ArrowRight
                       className="w-4 h-4 ml-3 group-hover:translate-x-1 transition-transform"
                       strokeWidth={2}

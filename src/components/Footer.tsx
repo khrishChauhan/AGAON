@@ -36,7 +36,9 @@ export default function Footer() {
             </div>{" "}
             <div className="text-white font-sans text-sm tracking-wide">
               {" "}
-              +91 8051911111{" "}
+              +91 80519 11111{" "}
+              <br/>
+              info@agaonconstruction.com
             </div>{" "}
           </div>{" "}
           <div>
@@ -151,6 +153,12 @@ export default function Footer() {
                 {" "}
                 Boring Road,
                 <br /> Patna, Bihar 800001{" "}
+              </li>{" "}
+              <li className="leading-relaxed mt-4">
+                {" "}
+                <span className="font-bold text-white">Business Hours:</span>
+                <br /> Monday – Saturday
+                <br /> 9:00 AM – 7:00 PM{" "}
               </li>{" "}
             </ul>{" "}
           </div>{" "}
