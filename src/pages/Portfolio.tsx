@@ -50,7 +50,7 @@ const portfolioData = [
     area: "120,000 Sq.Ft.",
     duration: "16 Months",
     image:
-      "https://images.unsplash.com/photo-1473172707857-f9e276582ab6?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 6,
@@ -60,7 +60,7 @@ const portfolioData = [
     area: "250,000 Sq.Ft.",
     duration: "22 Months",
     image:
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1554435493-93422e8220c8?auto=format&fit=crop&w=800&q=80",
   },
 ];
 const filters = ["All", "Residential", "Commercial", "Institutional"];
